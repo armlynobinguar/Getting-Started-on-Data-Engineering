@@ -37,3 +37,8 @@ parallel_apply(take_mean_age, athlete_events.groupby('Year'), 2)
 
 # Parallel apply using 4 cores
 parallel_apply(take_mean_age, athlete_events.groupby('Year'), 4)
+
+import dask.dataframe as dd
+
+# Set the number of partitions
+athlete_events_dask = dd.from_pandas(athlete_events, npartitions=4)
