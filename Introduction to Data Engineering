@@ -218,3 +218,9 @@ def transform_recommendations(avg_course_ratings, courses_to_recommend):
 
 # Use the function with the predefined DataFrame objects
 recommendations = transform_recommendations(avg_course_ratings, courses_to_recommend)
+
+connection_uri = "postgresql://repl:password@localhost:5432/dwh"
+db_engine = sqlalchemy.create_engine(connection_uri)
+
+def load_to_dwh(recommendations):
+    recommendations.to_sql("recommendations", db_engine, if_exists="replace")
