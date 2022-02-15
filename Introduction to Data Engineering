@@ -66,3 +66,16 @@ apply_paint = BashOperator(task_id="apply_paint", bash_command='echo "Applying p
 assemble_frame.set_downstream(place_tires)
 assemble_frame.set_downstream(assemble_body)
 assemble_body.set_downstream(apply_paint)
+
+
+import requests
+
+# Fetch the Hackernews post
+resp = requests.get("https://hacker-news.firebaseio.com/v0/item/16222426.json")
+
+# Print the response parsed as JSON
+print(resp.json())
+
+# Assign the score of the test to post_score
+post_score = resp.json()["score"]
+print(post_score)
