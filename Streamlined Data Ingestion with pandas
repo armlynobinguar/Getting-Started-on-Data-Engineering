@@ -90,3 +90,12 @@ except pd.io.common.CParserError:
   
 except pd.io.common.CParserError:
     print("Your data contained rows that could not be parsed.")
+
+# Load pandas as pd
+import pandas as pd
+
+# Read spreadsheet and assign it to survey_responses
+survey_responses = pd.read_excel('fcc_survey.xlsx')
+
+# View the head of the dataframe
+print(survey_responses.head())
