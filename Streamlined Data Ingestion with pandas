@@ -181,3 +181,10 @@ survey_data = pd.read_excel("fcc_survey.xlsx",
 
 # Print first few values of Part1StartTime
 print(survey_data.Part1StartTime.head())
+
+# Parse datetimes and assign result back to Part2EndTime
+survey_data["Part2EndTime"] = pd.to_datetime(survey_data["Part2EndTime"], 
+                                             format="%m%d%Y %H:%M:%S")
+
+# Print first few values of Part2EndTime
+print(survey_data.Part2EndTime.head())
