@@ -188,3 +188,12 @@ survey_data["Part2EndTime"] = pd.to_datetime(survey_data["Part2EndTime"],
 
 # Print first few values of Part2EndTime
 print(survey_data.Part2EndTime.head())
+
+# Import sqlalchemy's create_engine() function
+from sqlalchemy import create_engine
+
+# Create the database engine
+engine = create_engine("sqlite:///data.db")
+
+# View the tables in the database
+print(engine.table_names())
