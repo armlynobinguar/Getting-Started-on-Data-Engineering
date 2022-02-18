@@ -468,3 +468,11 @@ cafes = json_normalize(data["businesses"],
 
 # View data
 print(cafes.head())
+
+
+# Flatten businesses records and set underscore separators
+flat_cafes = json_normalize(data["businesses"],
+                            sep="_")
+
+# View the data
+print(flat_cafes.head())
