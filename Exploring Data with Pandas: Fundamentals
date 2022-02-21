@@ -124,3 +124,13 @@ dtypes = laptops.dtypes
 laptops["ram"] = laptops["ram"].str.replace('GB','').astype(int)
 laptops.rename({"ram": "ram_gb"}, axis=1, inplace=True)
 ram_gb_desc = laptops["ram_gb"].describe()
+
+laptops["gpu_manufacturer"] = (laptops["gpu"]
+                                       .str.split()
+                                       .str[0]
+                              )
+laptops["cpu_manufacturer"] = (laptops["cpu"]
+                                       .str.split()
+                                       .str[0]
+                               )
+cpu_manufacturer_counts = laptops["cpu_manufacturer"].value_counts()
