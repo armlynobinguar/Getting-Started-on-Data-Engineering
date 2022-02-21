@@ -18,3 +18,8 @@ industries_type = type(industries)
 countries = f500["country"]
 revenues_years = f500[["revenues", "years_on_global_500_list"]]
 ceo_to_sector = f500.loc[:, "ceo":"sector"]
+
+toyota = f500.loc['Toyota Motor']
+drink_companies = f500.loc[["Anheuser-Busch InBev", "Coca-Cola", "Heineken Holding"]]
+middle_companies = f500.loc["Tata Motors":"Nationwide", "rank":"country"]
+
