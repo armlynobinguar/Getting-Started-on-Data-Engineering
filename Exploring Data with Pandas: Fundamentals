@@ -6,3 +6,9 @@ rank_change =  f500["previous_rank"] - f500["rank"]
 rank_change =  f500["previous_rank"] - f500["rank"]
 rank_change_max = rank_change.max()
 rank_change_min = rank_change.min()
+
+rank = f500["rank"]
+rank_desc = rank.describe()
+
+prev_rank = f500["previous_rank"]
+prev_rank_desc = prev_rank.describe()
