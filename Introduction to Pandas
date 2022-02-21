@@ -6,3 +6,6 @@ f500.index.name = None
 
 f500_type = type(f500)
 f500_shape = f500.shape
+
+f500_head = f500.head(6)
+f500_tail = f500.tail(8)
