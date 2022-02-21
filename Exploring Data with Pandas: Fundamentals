@@ -16,3 +16,4 @@ prev_rank_desc = prev_rank.describe()
 zero_previous_rank = f500["previous_rank"].value_counts().loc[0]
 
 max_f500 = f500.max(numeric_only=True)
+f500_desc = f500.describe()
