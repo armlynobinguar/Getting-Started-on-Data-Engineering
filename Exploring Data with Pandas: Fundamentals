@@ -22,3 +22,8 @@ f500.loc["Dow Chemical","ceo"] = "Jim Fitterling"
 
 motor_bool = f500["industry"] == "Motor Vehicles and Parts"
 motor_countries = f500.loc[motor_bool, "country"]
+
+import numpy as np
+prev_rank_before = f500["previous_rank"].value_counts(dropna=False).head()
+f500.loc[f500["previous_rank"] == 0, "previous_rank"] = np.nan
+prev_rank_after = f500["previous_rank"].value_counts(dropna=False).head()
