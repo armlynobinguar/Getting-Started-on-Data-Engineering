@@ -143,3 +143,7 @@ value_counts_before = laptops.loc[laptops["os_version"].isnull(), "os"].value_co
 laptops.loc[laptops["os"] == "macOS", "os_version"] = "X"
 laptops.loc[laptops["os"] == "No OS", "os_version"] = "Version Unknown"
 value_counts_after = laptops.loc[laptops["os_version"].isnull(), "os"].value_counts()
+
+laptops["weight"] = laptops["weight"].str.replace("kgs","").str.replace("kg","").astype(float)
+laptops.rename({"weight": "weight_kg"}, axis=1, inplace=True)
+laptops.to_csv('laptops_cleaned.csv',index=False)
