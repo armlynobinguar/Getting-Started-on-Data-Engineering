@@ -50,3 +50,7 @@ null_previous_rank = f500[f500["previous_rank"].isnull()][["company","rank", "pr
 
 null_previous_rank = f500[f500["previous_rank"].isnull()]
 top5_null_prev_rank = null_previous_rank.iloc[:5]
+
+previously_ranked = f500[f500["previous_rank"].notnull()]
+rank_change = previously_ranked["previous_rank"] - previously_ranked["rank"]
+f500["rank_change"] = rank_change
