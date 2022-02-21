@@ -40,3 +40,7 @@ f500.loc[f500["previous_rank"] == 0, "previous_rank"] = np.nan
 
 fifth_row = f500.iloc[4]
 company_value = f500.iloc[0,0]
+
+
+first_three_rows = f500[:3]
+first_seventh_row_slice = f500.iloc[[0, 6], :5]
