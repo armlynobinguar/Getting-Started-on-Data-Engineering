@@ -1,0 +1,2 @@
+f500_head = f500.head(10)
+f500.info()
