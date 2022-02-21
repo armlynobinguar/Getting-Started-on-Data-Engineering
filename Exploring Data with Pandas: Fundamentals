@@ -12,3 +12,5 @@ rank_desc = rank.describe()
 
 prev_rank = f500["previous_rank"]
 prev_rank_desc = prev_rank.describe()
+
+zero_previous_rank = f500["previous_rank"].value_counts().loc[0]
