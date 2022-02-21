@@ -1,2 +1,4 @@
 f500_head = f500.head(10)
 f500.info()
+
+rank_change =  f500["previous_rank"] - f500["rank"]
