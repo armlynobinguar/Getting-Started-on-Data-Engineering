@@ -120,3 +120,7 @@ unique_ram = laptops["ram"].unique()
 laptops["ram"] = laptops["ram"].str.replace('GB','')
 laptops["ram"] = laptops["ram"].astype(int)
 dtypes = laptops.dtypes
+
+laptops["ram"] = laptops["ram"].str.replace('GB','').astype(int)
+laptops.rename({"ram": "ram_gb"}, axis=1, inplace=True)
+ram_gb_desc = laptops["ram_gb"].describe()
