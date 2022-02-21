@@ -134,3 +134,6 @@ laptops["cpu_manufacturer"] = (laptops["cpu"]
                                        .str[0]
                                )
 cpu_manufacturer_counts = laptops["cpu_manufacturer"].value_counts()
+
+laptops_no_null_rows = laptops.dropna(axis=0)
+laptops_no_null_cols = laptops.dropna(axis=1)
