@@ -44,3 +44,6 @@ company_value = f500.iloc[0,0]
 
 first_three_rows = f500[:3]
 first_seventh_row_slice = f500.iloc[[0, 6], :5]
+
+
+null_previous_rank = f500[f500["previous_rank"].isnull()][["company","rank", "previous_rank"]]
