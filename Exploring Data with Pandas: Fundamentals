@@ -2,3 +2,7 @@ f500_head = f500.head(10)
 f500.info()
 
 rank_change =  f500["previous_rank"] - f500["rank"]
+
+rank_change =  f500["previous_rank"] - f500["rank"]
+rank_change_max = rank_change.max()
+rank_change_min = rank_change.min()
