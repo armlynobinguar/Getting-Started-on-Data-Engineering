@@ -14,3 +14,7 @@ f500.info()
 
 industries = f500["industry"]
 industries_type = type(industries)
+
+countries = f500["country"]
+revenues_years = f500[["revenues", "years_on_global_500_list"]]
+ceo_to_sector = f500.loc[:, "ceo":"sector"]
