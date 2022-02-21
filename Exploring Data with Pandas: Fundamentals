@@ -33,3 +33,7 @@ rank_change_desc = f500["rank_change"].describe()
 
 industry_usa = f500["industry"][f500["country"] == "USA"].value_counts().head(2)
 sector_china = f500["sector"][f500["country"] == "China"].value_counts().head(3)
+
+
+f500 = pd.read_csv("f500.csv")
+f500.loc[f500["previous_rank"] == 0, "previous_rank"] = np.nan
