@@ -30,3 +30,6 @@ prev_rank_after = f500["previous_rank"].value_counts(dropna=False).head()
 
 f500["rank_change"] = f500["previous_rank"] - f500["rank"]
 rank_change_desc = f500["rank_change"].describe()
+
+industry_usa = f500["industry"][f500["country"] == "USA"].value_counts().head(2)
+sector_china = f500["sector"][f500["country"] == "China"].value_counts().head(3)
