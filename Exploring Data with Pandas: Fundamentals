@@ -19,3 +19,6 @@ max_f500 = f500.max(numeric_only=True)
 f500_desc = f500.describe()
 
 f500.loc["Dow Chemical","ceo"] = "Jim Fitterling"
+
+motor_bool = f500["industry"] == "Motor Vehicles and Parts"
+motor_countries = f500.loc[motor_bool, "country"]
