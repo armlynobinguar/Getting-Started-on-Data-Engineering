@@ -116,3 +116,7 @@ for c in laptops.columns:
 laptops.columns = new_columns
 
 unique_ram = laptops["ram"].unique()
+
+laptops["ram"] = laptops["ram"].str.replace('GB','')
+laptops["ram"] = laptops["ram"].astype(int)
+dtypes = laptops.dtypes
