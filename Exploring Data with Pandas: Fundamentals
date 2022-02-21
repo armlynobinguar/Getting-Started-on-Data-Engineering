@@ -66,3 +66,8 @@ brazil_venezuela = f500[filter_brazil_venezuela]
 
 filter_tech_outside_usa = (f500["sector"] == "Technology") & ~(f500["country"] == "USA")
 tech_outside_usa = f500[filter_tech_outside_usa].head()
+
+
+selected_rows = f500[f500["country"] == "Japan"]
+sorted_rows = selected_rows.sort_values("employees", ascending=False)
+top_japanese_employer = sorted_rows.iloc[0]["company"]
