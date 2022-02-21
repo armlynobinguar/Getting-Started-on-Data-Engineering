@@ -23,3 +23,6 @@ toyota = f500.loc['Toyota Motor']
 drink_companies = f500.loc[["Anheuser-Busch InBev", "Coca-Cola", "Heineken Holding"]]
 middle_companies = f500.loc["Tata Motors":"Nationwide", "rank":"country"]
 
+
+countries = f500_sel["country"]
+country_counts = countries.value_counts()
