@@ -26,3 +26,9 @@ middle_companies = f500.loc["Tata Motors":"Nationwide", "rank":"country"]
 
 countries = f500_sel["country"]
 country_counts = countries.value_counts()
+
+countries = f500['country']
+countries_counts = countries.value_counts()
+
+india = countries_counts["India"]
+north_america = countries_counts[["USA","Canada","Mexico"]]
