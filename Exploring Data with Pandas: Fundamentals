@@ -114,3 +114,5 @@ for c in laptops.columns:
     new_columns.append(clean_c)
     
 laptops.columns = new_columns
+
+unique_ram = laptops["ram"].unique()
