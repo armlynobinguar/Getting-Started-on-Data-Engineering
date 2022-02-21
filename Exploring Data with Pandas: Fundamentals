@@ -37,3 +37,6 @@ sector_china = f500["sector"][f500["country"] == "China"].value_counts().head(3)
 
 f500 = pd.read_csv("f500.csv")
 f500.loc[f500["previous_rank"] == 0, "previous_rank"] = np.nan
+
+fifth_row = f500.iloc[4]
+company_value = f500.iloc[0,0]
