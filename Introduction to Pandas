@@ -32,3 +32,6 @@ countries_counts = countries.value_counts()
 
 india = countries_counts["India"]
 north_america = countries_counts[["USA","Canada","Mexico"]]
+
+big_movers = f500.loc[["Aviva", "HP", "JD.com", "BHP Billiton"], ["rank","previous_rank"]]
+bottom_companies = f500.loc["National Grid":"AutoNation", ["rank","sector","country"]]
