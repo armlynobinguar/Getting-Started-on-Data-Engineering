@@ -91,3 +91,8 @@ for sector in f500["sector"].unique():
     top_company = sector_companies.sort_values("roa",ascending=False).iloc[0]
     company_name = top_company["company"]
     top_roa_by_sector[sector] = company_name
+    
+    
+import pandas as pd
+laptops = pd.read_csv('laptops.csv', encoding='Latin-1')
+laptops.info()
