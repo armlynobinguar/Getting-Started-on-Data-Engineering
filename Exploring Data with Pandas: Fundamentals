@@ -96,3 +96,21 @@ for sector in f500["sector"].unique():
 import pandas as pd
 laptops = pd.read_csv('laptops.csv', encoding='Latin-1')
 laptops.info()
+
+import pandas as pd
+laptops = pd.read_csv('laptops.csv', encoding='Latin-1')
+def clean_col(col):
+    col = col.strip()
+    col = col.replace("Operating System", "os")
+    col = col.replace(" ","_")
+    col = col.replace("(","")
+    col = col.replace(")","")
+    col = col.lower()
+    return col
+
+new_columns = []
+for c in laptops.columns:
+    clean_c = clean_col(c)
+    new_columns.append(clean_c)
+    
+laptops.columns = new_columns
