@@ -60,3 +60,9 @@ large_revenue = f500["revenues"] > 100000
 negative_profits = f500["profits"] < 0
 combined = large_revenue & negative_profits
 big_rev_neg_profit = f500[combined]
+
+filter_brazil_venezuela = (f500["country"] == "Brazil") | (f500["country"] == "Venezuela")
+brazil_venezuela = f500[filter_brazil_venezuela]
+
+filter_tech_outside_usa = (f500["sector"] == "Technology") & ~(f500["country"] == "USA")
+tech_outside_usa = f500[filter_tech_outside_usa].head()
