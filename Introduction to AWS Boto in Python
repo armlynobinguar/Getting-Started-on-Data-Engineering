@@ -232,3 +232,20 @@ objects_df['Link'] = base_url + objects_df['Key']
 
 # Preview the resulting DataFrame
 objects_df.head()
+
+
+# Write objects_df to an HTML file
+objects_df.to_html('report_listing.html',
+    # Set clickable links
+    render_links=True,
+	# Isolate the columns
+    columns=['Link', 'LastModified', 'Size'])
+
+# Overwrite index.html key by uploading the new file
+s3.upload_file(
+  Filename='./report_listing.html', Key='index.html', 
+  Bucket='gid-reports',
+  ExtraArgs = {
+    'ContentType': 'text/html', 
+    'ACL': 'public-read'
+  })
