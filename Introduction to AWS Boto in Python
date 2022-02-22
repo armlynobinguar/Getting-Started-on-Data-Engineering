@@ -132,3 +132,17 @@ for obj in response['Contents']:
     
     # Print the Public Object URL for each object
     print("https://{}.s3.amazonaws.com/{}".format('gid-staging', obj['Key']))
+    
+    
+# Generate presigned_url for the uploaded object
+share_url = s3.generate_presigned_url(
+  # Specify allowable operations
+  ClientMethod='get_object',
+  # Set the expiration time
+  ExpiresIn=3600,
+  # Set bucket and shareable object's name
+  Params={'Bucket': 'gid-staging', 'Key': 'final_report.csv'}
+)
+
+# Print out the presigned URL
+print(share_url)
