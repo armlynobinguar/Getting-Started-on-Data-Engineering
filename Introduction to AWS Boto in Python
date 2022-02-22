@@ -76,3 +76,16 @@ s3.create_bucket(Bucket='gid-processed')
 response = s3.list_buckets()
 for bucket in response['Buckets']:
     print(bucket['Name'])
+    
+# Upload final_report.csv with key 2019/final_report_01_01.csv
+s3.upload_file(Bucket='gid-staging', 
+               # Set filename and key
+               Filename='final_report.csv', 
+               Key='2019/final_report_01_01.csv')
+
+# Get object metadata and print it
+response = s3.head_object(Bucket='gid-staging', 
+                       Key='2019/final_report_01_01.csv')
+
+# Print the size of the uploaded object
+print(response['ContentLength'])
