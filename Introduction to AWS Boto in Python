@@ -204,3 +204,18 @@ all_reqs = pd.concat(df_list)
 
 # Preview the DataFrame
 all_reqs.head()
+
+# Write agg_df to a CSV and HTML file with no border
+agg_df.to_csv('./feb_final_report.csv')
+agg_df.to_html('./feb_final_report.html', border=0)
+
+# Upload the generated CSV to the gid-reports bucket
+s3.upload_file(Filename='./feb_final_report.csv', 
+	Key='2019/feb/final_report.html', Bucket='gid-reports',
+    ExtraArgs = {'ACL': 'public-read'})
+
+# Upload the generated HTML to the gid-reports bucket
+s3.upload_file(Filename='./feb_final_report.html', 
+	Key='2019/feb/final_report.html', Bucket='gid-reports',
+    ExtraArgs = {'ContentType': 'text/html', 
+                 'ACL': 'public-read'})
