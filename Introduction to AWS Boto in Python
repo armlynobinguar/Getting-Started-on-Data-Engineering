@@ -117,3 +117,18 @@ s3.upload_file(
   # During upload, set ACL to public-read
   ExtraArgs = {
     'ACL': 'public-read'})
+
+# List only objects that start with '2019/final_'
+response = s3.list_objects(
+    Bucket='gid-staging', Prefix='2019/final_')
+
+# Iterate over the objects
+for obj in response['Contents']:
+  
+    # Give each object ACL of public-read
+    s3.put_object_acl(Bucket='gid-staging', 
+                      Key=obj['Key'], 
+                      ACL='public-read')
+    
+    # Print the Public Object URL for each object
+    print("https://{}.s3.amazonaws.com/{}".format('gid-staging', obj['Key']))
