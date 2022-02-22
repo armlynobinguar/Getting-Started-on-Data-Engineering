@@ -39,3 +39,13 @@ response_test = s3.create_bucket(Bucket='gim-test')
 
 # Print out the response
 print(response_staging)
+
+
+# Get the list_buckets response
+response = s3.list_buckets()
+
+# Iterate over Buckets from .list_buckets() response
+for bucket in response['Buckets']:
+  
+  	# Print the Name for each bucket
+    print(bucket['Name'])
