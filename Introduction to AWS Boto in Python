@@ -219,3 +219,16 @@ s3.upload_file(Filename='./feb_final_report.html',
 	Key='2019/feb/final_report.html', Bucket='gid-reports',
     ExtraArgs = {'ContentType': 'text/html', 
                  'ACL': 'public-read'})
+
+# List the gid-reports bucket objects starting with 2019/
+objects_list = s3.list_objects(Bucket='gid-reports', Prefix='2019/')
+
+# Convert the response contents to DataFrame
+objects_df = pd.DataFrame(objects_list['Contents'])
+
+# Create a column "Link" that contains Public Object URL
+base_url = "http://gid-reports.s3.amazonaws.com/"
+objects_df['Link'] = base_url + objects_df['Key']
+
+# Preview the resulting DataFrame
+objects_df.head()
