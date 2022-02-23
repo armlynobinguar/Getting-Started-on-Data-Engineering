@@ -284,3 +284,7 @@ plt.scatter(bike_sharing['windspeed'], bike_sharing['hum'])
 plt.xlabel('Wind Speed')
 plt.ylabel('Humidity')
 plt.show()
+
+sentence_1 = True
+sentence_2 = True
+sentence_3 = True
