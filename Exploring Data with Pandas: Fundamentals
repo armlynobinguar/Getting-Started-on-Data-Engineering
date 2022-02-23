@@ -369,3 +369,16 @@ traffic = pd.read_csv('traffic_sao_paulo.csv', sep=';')
 traffic.head()
 traffic.tail()
 traffic.info()
+
+
+import pandas as pd
+traffic = pd.read_csv('traffic_sao_paulo.csv', sep=';')
+traffic['Slowness in traffic (%)'] = traffic['Slowness in traffic (%)'].str.replace(',', '.')
+traffic['Slowness in traffic (%)'] = traffic['Slowness in traffic (%)'].astype(float)
+import matplotlib.pyplot as plt
+plt.hist(traffic['Slowness in traffic (%)'])
+plt.show()
+
+sentence_1 = True
+sentence_2 = True
+sentence_3 = False
