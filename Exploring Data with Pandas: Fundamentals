@@ -259,3 +259,8 @@ bike_sharing['dteday'] = pd.to_datetime(bike_sharing['dteday'])
 plt.scatter(bike_sharing['atemp'], bike_sharing['registered'])
 plt.show()
 correlation = 'positive'
+
+sentence_1 = True
+sentence_2 = True
+sentence_3 = False
+sentence_4 = True
