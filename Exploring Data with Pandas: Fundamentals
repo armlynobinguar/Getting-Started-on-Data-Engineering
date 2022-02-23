@@ -557,3 +557,14 @@ housing = pd.read_csv('housing.csv')
 housing.head()
 housing.tail()
 housing.info()
+
+import pandas as pd
+housing = pd.read_csv('housing.csv')
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.set_theme()
+sns.relplot(data=housing, x='Gr Liv Area', y='SalePrice')
+plt.show()
+
+correlation = 'positive'
