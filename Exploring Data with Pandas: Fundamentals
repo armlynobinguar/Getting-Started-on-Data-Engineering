@@ -147,3 +147,8 @@ value_counts_after = laptops.loc[laptops["os_version"].isnull(), "os"].value_cou
 laptops["weight"] = laptops["weight"].str.replace("kgs","").str.replace("kg","").astype(float)
 laptops.rename({"weight": "weight_kg"}, axis=1, inplace=True)
 laptops.to_csv('laptops_cleaned.csv',index=False)
+
+sentence_1 = True
+sentence_2 = False
+sentence_3 = True
+sentence_4 = True
