@@ -363,3 +363,9 @@ bike_sharing['dteday'] = pd.to_datetime(bike_sharing['dteday'])
 
 plt.hist(bike_sharing['casual'])
 plt.show()
+
+import pandas as pd
+traffic = pd.read_csv('traffic_sao_paulo.csv', sep=';')
+traffic.head()
+traffic.tail()
+traffic.info()
