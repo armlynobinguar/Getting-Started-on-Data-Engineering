@@ -179,3 +179,20 @@ who_time_series['Date_reported'] = pd.to_datetime(who_time_series['Date_reported
 print(who_time_series.head(5))
 print(who_time_series.tail(5))
 print(who_time_series.info())
+
+
+def plot_cumulative_cases(country_name):
+    country = who_time_series[who_time_series['Country'] == country_name]
+    plt.plot(country['Date_reported'], country['Cumulative_cases'])
+    plt.title('{}: Cumulative Reported Cases'.format(country_name))
+    plt.xlabel('Date')
+    plt.ylabel('Number of Cases')
+    plt.show()
+
+plot_cumulative_cases('Brazil')
+plot_cumulative_cases('Iceland')
+plot_cumulative_cases('Argentina')
+
+brazil = 'exponential'
+iceland = 'logarithmic'
+argentina = 'exponential'
