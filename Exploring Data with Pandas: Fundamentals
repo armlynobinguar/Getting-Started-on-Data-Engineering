@@ -288,3 +288,18 @@ plt.show()
 sentence_1 = True
 sentence_2 = True
 sentence_3 = True
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+bike_sharing = pd.read_csv('day.csv')
+bike_sharing['dteday'] = pd.to_datetime(bike_sharing['dteday'])
+
+plt.scatter(bike_sharing['workingday'], bike_sharing['casual'])
+plt.title('Working Day Vs. Casual')
+plt.show()
+
+plt.scatter(bike_sharing['workingday'], bike_sharing['registered'])
+plt.title('Working Day Vs. Registered')
+plt.show()
