@@ -382,3 +382,13 @@ plt.show()
 sentence_1 = True
 sentence_2 = True
 sentence_3 = False
+
+import matplotlib.pyplot as plt
+import pandas as pd
+traffic = pd.read_csv('traffic_sao_paulo.csv', sep=';')
+traffic['Slowness in traffic (%)'] = traffic['Slowness in traffic (%)'].str.replace(',', '.')
+traffic['Slowness in traffic (%)'] = traffic['Slowness in traffic (%)'].astype(float)
+traffic['Slowness in traffic (%)'].plot.hist()
+plt.title('Distribution of Slowness in traffic (%)')
+plt.xlabel('Slowness in traffic (%)')
+plt.show()
