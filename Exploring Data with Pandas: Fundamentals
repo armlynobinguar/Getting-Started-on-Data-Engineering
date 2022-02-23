@@ -550,3 +550,10 @@ for day in days:
 
 plt.legend()
 plt.show()
+
+
+import pandas as pd
+housing = pd.read_csv('housing.csv')
+housing.head()
+housing.tail()
+housing.info()
