@@ -265,3 +265,17 @@ c_alerts_arn_1 = sns.create_topic(Name='city_alerts')['TopicArn']
 
 # Compare the two to make sure they match
 print(c_alerts_arn == c_alerts_arn_1)
+
+# Create list of departments
+departments = ['trash', 'streets', 'water']
+
+for dept in departments:
+	# For every department, create a general Topic
+    sns.create_topic(Name="{}_general".format(dept))
+    
+    # For every department, create a critical Topic
+    sns.create_topic(Name="{}_critical".format(dept))
+
+# Print all the topics in SNS
+response = sns.list_topics()
+print(response['Topics'])
