@@ -454,3 +454,18 @@ for text_detection in response['TextDetections']:
         lines.append(text_detection['DetectedText'])
 # Print out the words list
 print(lines)
+
+# For each dataframe row
+for index, row in dumping_df.iterrows():
+    # Get the public description field
+    description = dumping_df.loc[index, 'public_description']
+    if description != '':
+        # Detect language in the field content
+        resp = comprehend.detect_dominant_language(Text=description)
+        # Assign the top choice language to the lang column.
+        dumping_df.loc[index, 'lang'] = resp['Languages'][0]['LanguageCode']
+        
+# Count the total number of spanish posts
+spanish_post_ct = len(dumping_df[dumping_df.lang == 'es'])
+# Print the result
+print("{} posts in Spanish".format(spanish_post_ct))
