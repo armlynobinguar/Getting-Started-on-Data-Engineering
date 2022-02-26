@@ -1084,3 +1084,7 @@ for ax, xmax, death in zip(axes, xmax_vals, deaths):
             color='#af0b1e', weight='bold')
 
 plt.show()
+
+sentence_1 = True
+sentence_2 = True
+sentence_3 = False
