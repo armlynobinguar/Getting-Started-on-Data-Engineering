@@ -1104,3 +1104,13 @@ sentence_1 = False # Enclosure is stronger.
 sentence_2 = True
 sentence_3 = False # Enclosure is stronger.
 sentence_4 = False # The human perception is non-random.
+
+
+import matplotlib.style as style
+style.use('ggplot')
+plt.plot([2, 4, 6], [10, 15, 5])
+plt.show()
+
+style.use('default')
+plt.plot([2, 4, 6], [10, 15, 5])
+plt.show()
