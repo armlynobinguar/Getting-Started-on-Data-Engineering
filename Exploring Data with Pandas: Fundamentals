@@ -1121,3 +1121,21 @@ red_corr = red_wine.corr()['quality'][:-1]
 white_wine = pd.read_csv('winequality-white.csv', sep=';')
 white_corr = white_wine.corr()['quality'][:-1]
 print(white_corr)
+
+# Initial Code
+
+style.use('fivethirtyeight')
+fig, ax = plt.subplots(figsize=(9, 5))
+# ax.barh(white_corr.index, white_corr, left=2)
+# ax.barh(red_corr.index, red_corr)
+# *** *** *** *** *** *** *** *** *** ***
+
+# Solution Code
+ax.barh(white_corr.index, white_corr, left=2, height=0.5)
+ax.barh(red_corr.index, red_corr, height=0.5)
+
+ax.grid(b=False)
+ax.set_yticklabels([])
+ax.set_xticklabels([])
+
+plt.show()
