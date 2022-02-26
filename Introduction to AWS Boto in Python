@@ -431,3 +431,14 @@ for label in response['Labels']:
                 cats_count += 1
 # Print count of cats
 print(cats_count)
+
+# Create empty list of words
+words = []
+# Iterate over the TextDetections in the response dictionary
+for text_detection in response['TextDetections']:
+  	# If TextDetection type is WORD, append it to words list
+    if text_detection['Type'] == 'WORD':
+        # Append the detected text
+        words.append(text_detection['DetectedText'])
+# Print out the words list
+print(words)
