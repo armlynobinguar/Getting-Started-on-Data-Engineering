@@ -1088,3 +1088,7 @@ plt.show()
 sentence_1 = True
 sentence_2 = True
 sentence_3 = False
+
+sentence_1 = False # It's similarity of color, not shape
+sentence_2 = True
+sentence_3 = True
