@@ -1114,3 +1114,10 @@ plt.show()
 style.use('default')
 plt.plot([2, 4, 6], [10, 15, 5])
 plt.show()
+
+import pandas as pd
+red_wine = pd.read_csv('winequality-red.csv', sep=';')
+red_corr = red_wine.corr()['quality'][:-1]
+white_wine = pd.read_csv('winequality-white.csv', sep=';')
+white_corr = white_wine.corr()['quality'][:-1]
+print(white_corr)
