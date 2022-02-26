@@ -822,3 +822,14 @@ ax.axvline(x=150000, ymin=0.045, c='grey',
            alpha=0.5)
 
 plt.show()
+
+import pandas as pd
+import matplotlib.pyplot as plt
+death_toll = pd.read_csv('covid_avg_deaths.csv')
+fig, (ax1, ax2, ax3, ax4) = plt.subplots(nrows=4, ncols=1,
+                                         figsize=(6,8))
+ax1.plot(death_toll['Month'], death_toll['New_deaths'])
+ax2.plot(death_toll['Month'], death_toll['New_deaths'])
+ax3.plot(death_toll['Month'], death_toll['New_deaths'])
+ax4.plot(death_toll['Month'], death_toll['New_deaths'])
+plt.show()
