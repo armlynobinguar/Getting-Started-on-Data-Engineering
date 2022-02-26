@@ -1099,3 +1099,8 @@ sentence_3 = True
 
 sentence_1 = True
 sentence_2 = False # An application of the principle of connection
+
+sentence_1 = False # Enclosure is stronger.
+sentence_2 = True
+sentence_3 = False # Enclosure is stronger.
+sentence_4 = False # The human perception is non-random.
