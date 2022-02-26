@@ -290,3 +290,19 @@ for topic in topics:
     
 # Print the list of remaining critical topics
 print(sns.list_topics()['Topics'])
+
+# Subscribe Elena's phone number to streets_critical topic
+resp_sms = sns.subscribe(
+  TopicArn = str_critical_arn, 
+  Protocol='sms', Endpoint="+16196777733")
+
+# Print the SubscriptionArn
+print(resp_sms['SubscriptionArn'])
+
+# Subscribe Elena's email to streets_critical topic.
+resp_email = sns.subscribe(
+  TopicArn = str_critical_arn, 
+  Protocol='email', Endpoint="eblock@sandiegocity.gov")
+
+# Print the SubscriptionArn
+print(resp_email['SubscriptionArn'])
