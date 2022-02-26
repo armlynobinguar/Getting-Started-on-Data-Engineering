@@ -279,3 +279,14 @@ for dept in departments:
 # Print all the topics in SNS
 response = sns.list_topics()
 print(response['Topics'])
+
+# Get the current list of topics
+topics = sns.list_topics()['Topics']
+
+for topic in topics:
+  # For each topic, if it is not marked critical, delete it
+  if "critical" not in topic['TopicArn']:
+    sns.delete_topic(TopicArn=topic['TopicArn'])
+    
+# Print the list of remaining critical topics
+print(sns.list_topics()['Topics'])
