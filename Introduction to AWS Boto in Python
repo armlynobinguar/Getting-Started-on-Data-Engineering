@@ -306,3 +306,18 @@ resp_email = sns.subscribe(
 
 # Print the SubscriptionArn
 print(resp_email['SubscriptionArn'])
+
+# For each email in contacts, create subscription to streets_critical
+for email in contacts['Email']:
+  sns.subscribe(TopicArn = str_critical_arn,
+                # Set channel and recipient
+                Protocol = 'email',
+                Endpoint = email)
+
+# List subscriptions for streets_critical topic, convert to DataFrame
+response = sns.list_subscriptions_by_topic(
+  TopicArn = str_critical_arn)
+subs = pd.DataFrame(response['Subscriptions'])
+
+# Preview the DataFrame
+subs.head()
