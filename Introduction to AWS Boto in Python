@@ -442,3 +442,15 @@ for text_detection in response['TextDetections']:
         words.append(text_detection['DetectedText'])
 # Print out the words list
 print(words)
+
+
+# Create empty list of words
+lines = []
+# Iterate over the TextDetections in the response dictionary
+for text_detection in response['TextDetections']:
+  	# If TextDetection type is LINE, append it to lines list
+    if text_detection['Type'] == 'LINE':
+      	# Append the detected text
+        lines.append(text_detection['DetectedText'])
+# Print out the words list
+print(lines)
