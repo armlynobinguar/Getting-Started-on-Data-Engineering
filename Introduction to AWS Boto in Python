@@ -395,3 +395,11 @@ if vcounts['water'] > 300:
     TopicArn = dept_arns['water_extreme'],
     Message = "{} violations! RUN!".format(vcounts['water']),
     Subject = "THIS IS BAD.  WE ARE FLOODING!")
+
+# Use Rekognition client to detect labels
+image1_response = rekog.detect_labels(
+    # Specify the image as an S3Object; Return one label
+    Image=image1, MaxLabels=1)
+
+# Print the labels
+print(image1_response['Labels'])
