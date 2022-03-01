@@ -1410,3 +1410,12 @@ status_replace = {
 }
 
 loans_2007 = loans_2007.replace(status_replace)
+
+orig_columns = loans_2007.columns
+drop_columns = []
+for col in orig_columns:
+    col_series = loans_2007[col].dropna().unique()
+    if len(col_series) == 1:
+        drop_columns.append(col)
+loans_2007 = loans_2007.drop(drop_columns, axis=1)
+print(drop_columns)
