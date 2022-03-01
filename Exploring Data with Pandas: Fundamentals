@@ -1391,3 +1391,5 @@ loans_2007 = pd.read_csv("loans_2007.csv")
 loans_2007.drop_duplicates()
 print(loans_2007.iloc[0])
 print(loans_2007.shape[1])
+
+loans_2007 = loans_2007.drop(["id", "member_id", "funded_amnt", "funded_amnt_inv", "grade", "sub_grade", "emp_title", "issue_d"], axis=1)
