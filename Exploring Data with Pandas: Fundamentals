@@ -1399,3 +1399,14 @@ loans_2007 = loans_2007.drop(["zip_code", "out_prncp", "out_prncp_inv", "total_p
 
 
 print(loans_2007['loan_status'].value_counts())
+
+loans_2007 = loans_2007[(loans_2007['loan_status'] == "Fully Paid") | (loans_2007['loan_status'] == "Charged Off")]
+
+status_replace = {
+    "loan_status" : {
+        "Fully Paid": 1,
+        "Charged Off": 0,
+    }
+}
+
+loans_2007 = loans_2007.replace(status_replace)
