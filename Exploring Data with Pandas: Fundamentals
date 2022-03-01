@@ -1433,3 +1433,7 @@ print(object_columns_df.iloc[0])
 cols = ['home_ownership', 'verification_status', 'emp_length', 'term', 'addr_state']
 for c in cols:
     print(loans[c].value_counts())
+
+
+print(loans["title"].value_counts())
+print(loans["purpose"].value_counts())
