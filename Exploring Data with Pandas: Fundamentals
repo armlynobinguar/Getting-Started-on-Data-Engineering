@@ -1458,3 +1458,8 @@ loans = loans.drop(["last_credit_pull_d", "earliest_cr_line", "addr_state", "tit
 loans["int_rate"] = loans["int_rate"].str.rstrip("%").astype("float")
 loans["revol_util"] = loans["revol_util"].str.rstrip("%").astype("float")
 loans = loans.replace(mapping_dict)
+
+
+import pandas as pd
+loans = pd.read_csv("clean_loans_2007.csv")
+print(loans.info())
