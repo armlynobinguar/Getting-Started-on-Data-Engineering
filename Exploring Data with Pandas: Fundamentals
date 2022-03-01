@@ -1419,3 +1419,9 @@ for col in orig_columns:
         drop_columns.append(col)
 loans_2007 = loans_2007.drop(drop_columns, axis=1)
 print(drop_columns)
+
+
+import pandas as pd
+loans = pd.read_csv('filtered_loans_2007.csv')
+null_counts = loans.isnull().sum()
+print(null_counts[null_counts>0])
