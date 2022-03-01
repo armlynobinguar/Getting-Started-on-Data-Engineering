@@ -1509,3 +1509,12 @@ fpr = fp / (fp + tn)
 
 print(tpr)
 print(fpr)
+
+from sklearn.linear_model import LogisticRegression
+lr = LogisticRegression()
+cols = loans.columns
+train_cols = cols.drop("loan_status")
+features = loans[train_cols]
+target = loans["loan_status"]
+lr.fit(features, target)
+predictions = lr.predict(features)
