@@ -1396,3 +1396,6 @@ loans_2007 = loans_2007.drop(["id", "member_id", "funded_amnt", "funded_amnt_inv
 
 
 loans_2007 = loans_2007.drop(["zip_code", "out_prncp", "out_prncp_inv", "total_pymnt", "total_pymnt_inv", "total_rec_prncp"], axis=1)
+
+
+print(loans_2007['loan_status'].value_counts())
