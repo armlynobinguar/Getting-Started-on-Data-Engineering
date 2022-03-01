@@ -1425,3 +1425,7 @@ import pandas as pd
 loans = pd.read_csv('filtered_loans_2007.csv')
 null_counts = loans.isnull().sum()
 print(null_counts[null_counts>0])
+
+
+object_columns_df = loans.select_dtypes(include=["object"])
+print(object_columns_df.iloc[0])
