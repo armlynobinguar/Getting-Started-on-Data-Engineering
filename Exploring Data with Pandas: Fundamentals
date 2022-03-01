@@ -1429,3 +1429,7 @@ print(null_counts[null_counts>0])
 
 object_columns_df = loans.select_dtypes(include=["object"])
 print(object_columns_df.iloc[0])
+
+cols = ['home_ownership', 'verification_status', 'emp_length', 'term', 'addr_state']
+for c in cols:
+    print(loans[c].value_counts())
