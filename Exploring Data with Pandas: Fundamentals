@@ -1384,3 +1384,10 @@ color_map_red = positive_red.map({True:'#33A1C9', False:'#ffae42'})
 ax.barh(red_corr.index, red_corr, height=0.5, left=-0.1,
         color=color_map_red)
 plt.show()
+
+
+import pandas as pd
+loans_2007 = pd.read_csv("loans_2007.csv")
+loans_2007.drop_duplicates()
+print(loans_2007.iloc[0])
+print(loans_2007.shape[1])
