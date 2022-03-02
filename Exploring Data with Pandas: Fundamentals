@@ -1733,3 +1733,6 @@ merge_index = pd.merge(left = four_2015,right = three_2016, left_index = True, r
 rows = 4
 columns = 6
 merge_index_left = pd.merge(left=four_2015, right=three_2016, how='left', left_index=True, right_index=True, suffixes=('_2015','_2016'))
+
+mapping = {'Economy (GDP per Capita)': 'Economy', 'Health (Life Expectancy)': 'Health', 'Trust (Government Corruption)': 'Trust' }
+happiness2015 = happiness2015.rename(mapping, axis = 1)
