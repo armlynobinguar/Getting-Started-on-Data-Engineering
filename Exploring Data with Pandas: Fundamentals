@@ -1642,3 +1642,11 @@ print(fpr)
 happiness2015 = pd.read_csv("World_Happiness_2015.csv")
 first_5 = happiness2015.head()
 happiness2015.info()
+
+
+mean_happiness = {}
+regions = happiness2015['Region'].unique()
+for r in regions:
+    region_group = happiness2015[happiness2015['Region'] == r]
+    region_mean = region_group['Happiness Score'].mean()
+    mean_happiness[r] = region_mean
