@@ -1659,3 +1659,6 @@ grouped = happiness2015.groupby('Region')
 north_america = happiness2015.iloc[[4,14]]
 na_group = grouped.get_group('North America')
 equal = north_america == na_group
+
+grouped = happiness2015.groupby('Region')
+means = grouped.mean()
