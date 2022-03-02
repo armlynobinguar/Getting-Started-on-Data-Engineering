@@ -1650,3 +1650,7 @@ for r in regions:
     region_group = happiness2015[happiness2015['Region'] == r]
     region_mean = region_group['Happiness Score'].mean()
     mean_happiness[r] = region_mean
+
+
+grouped = happiness2015.groupby('Region')
+aus_nz = grouped.get_group('Australia and New Zealand')
