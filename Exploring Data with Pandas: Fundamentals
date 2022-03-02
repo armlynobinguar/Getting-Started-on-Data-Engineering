@@ -1682,3 +1682,7 @@ print(happiness_means)
 pv_happiness = happiness2015.pivot_table(values='Happiness Score', index='Region', aggfunc=np.mean, margins=True)
 pv_happiness.plot(kind='barh', xlim=(0,10), title='Mean Happiness Scores by Region', legend=False)
 world_mean_happiness = happiness2015['Happiness Score'].mean()
+
+grouped = happiness2015.groupby('Region')[['Happiness Score','Family']]
+happy_family_stats = grouped.agg([np.min, np.max, np.mean])
+pv_happy_family_stats = happiness2015.pivot_table(['Happiness Score', 'Family'], 'Region', aggfunc=[np.min, np.max, np.mean], margins=True)
