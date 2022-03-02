@@ -1674,3 +1674,7 @@ def dif(group):
     return (group.max() - group.mean())
 happy_mean_max = happy_grouped.agg([np.mean, np.max])
 mean_max_dif = happy_grouped.agg(dif)
+
+happiness_means = happiness2015.groupby('Region')['Happiness Score'].mean()
+happiness_means = happiness2015.groupby('Region')['Happiness Score'].mean()
+print(happiness_means)
