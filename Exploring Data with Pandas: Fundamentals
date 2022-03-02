@@ -1745,3 +1745,16 @@ def label(element):
 economy_impact_map = happiness2015['Economy'].map(label)
 economy_impact_apply = happiness2015['Economy'].apply(label)
 equal = economy_impact_map.equals(economy_impact_apply)
+
+def label(element):
+    if element > 1:
+        return 'High'
+    else:
+        return 'Low'
+economy_impact_apply = happiness2015['Economy'].apply(label)
+def label(element, x):
+    if element > x:
+        return 'High'
+    else:
+        return 'Low'
+economy_impact_apply = happiness2015['Economy'].apply(label, x = .8)
