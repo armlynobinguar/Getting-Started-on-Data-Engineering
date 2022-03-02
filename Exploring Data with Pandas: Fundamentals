@@ -1695,3 +1695,10 @@ happiness2017 = pd.read_csv("World_Happiness_2017.csv")
 happiness2015['Year'] = 2015
 happiness2016['Year'] = 2016
 happiness2017['Year'] = 2017
+
+head_2015 = happiness2015[['Country','Happiness Score', 'Year']].head(3)
+head_2016 = happiness2016[['Country','Happiness Score', 'Year']].head(3)
+concat_axis0 = pd.concat([head_2015, head_2016])
+concat_axis1 = pd.concat([head_2015, head_2016], axis=1)
+question1 = 6
+question2 = 3
