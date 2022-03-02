@@ -1678,3 +1678,7 @@ mean_max_dif = happy_grouped.agg(dif)
 happiness_means = happiness2015.groupby('Region')['Happiness Score'].mean()
 happiness_means = happiness2015.groupby('Region')['Happiness Score'].mean()
 print(happiness_means)
+
+pv_happiness = happiness2015.pivot_table(values='Happiness Score', index='Region', aggfunc=np.mean, margins=True)
+pv_happiness.plot(kind='barh', xlim=(0,10), title='Mean Happiness Scores by Region', legend=False)
+world_mean_happiness = happiness2015['Happiness Score'].mean()
