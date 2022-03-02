@@ -1686,3 +1686,12 @@ world_mean_happiness = happiness2015['Happiness Score'].mean()
 grouped = happiness2015.groupby('Region')[['Happiness Score','Family']]
 happy_family_stats = grouped.agg([np.min, np.max, np.mean])
 pv_happy_family_stats = happiness2015.pivot_table(['Happiness Score', 'Family'], 'Region', aggfunc=[np.min, np.max, np.mean], margins=True)
+
+import pandas as pd
+happiness2015 = pd.read_csv("World_Happiness_2015.csv")
+happiness2016 = pd.read_csv("World_Happiness_2016.csv")
+happiness2017 = pd.read_csv("World_Happiness_2017.csv")
+
+happiness2015['Year'] = 2015
+happiness2016['Year'] = 2016
+happiness2017['Year'] = 2017
