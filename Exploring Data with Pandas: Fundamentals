@@ -1637,3 +1637,8 @@ fpr = fp / (fp + tn)
 
 print(tpr)
 print(fpr)
+
+
+happiness2015 = pd.read_csv("World_Happiness_2015.csv")
+first_5 = happiness2015.head()
+happiness2015.info()
