@@ -239,3 +239,16 @@ world_cup_obj = json.loads(world_cup_str)
 
 file = open("hn_2014.json")
 hn = json.load(file)
+
+
+def del_key(dict_, key):
+    # create a copy so we don't
+    # modify the original dict
+    modified_dict = dict_.copy()
+    del modified_dict[key]
+    return modified_dict
+hn_clean = []
+
+for d in hn:
+    new_d = del_key(d, 'createdAtI')
+    hn_clean.append(new_d)
