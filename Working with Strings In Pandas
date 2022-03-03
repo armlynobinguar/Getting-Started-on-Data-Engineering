@@ -100,3 +100,6 @@ for t in titles:
 pattern = '[Pp]ython'
 titles = hn['title']
 python_mentions = titles.str.contains(pattern).sum()
+
+titles = hn['title']
+ruby_titles = titles[titles.str.contains(r"[Rr]uby")]
