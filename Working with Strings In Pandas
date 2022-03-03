@@ -288,3 +288,9 @@ hn_df = pd.DataFrame(hn_clean)
 tags = hn_df['tags']
 has_four_tags = tags.apply(len) == 4
 four_tags = tags[has_four_tags]
+
+
+# def extract_tag(l):
+#     return l[-1] if len(l) == 4 else None
+cleaned_tags = tags.apply(lambda l: l[-1] if len(l) == 4 else None)
+hn_df['tags'] = cleaned_tags
