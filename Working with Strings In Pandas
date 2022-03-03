@@ -79,3 +79,6 @@ happiness_mean = combined['HAPPINESS SCORE'].mean()
 print(happiness_mean)
 combined['HAPPINESS SCORE UPDATED'] = combined['HAPPINESS SCORE'].fillna(happiness_mean)
 print(combined['HAPPINESS SCORE UPDATED'].mean())
+
+combined = combined.dropna()
+missing = combined.isnull().sum()
