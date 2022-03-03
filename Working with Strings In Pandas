@@ -51,3 +51,6 @@ happiness2016.columns = happiness2016.columns.str.replace('(', '').str.replace('
 
 combined = pd.concat([happiness2015, happiness2016, happiness2017], ignore_index=True)
 missing = combined.isnull().sum()
+
+regions_2017 = combined[combined['YEAR']==2017]['REGION']
+missing = regions_2017.isnull().sum()
