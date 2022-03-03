@@ -6,4 +6,8 @@ merged['Currency Vectorized'] = merged['CurrencyUnit'].str.split().str.get(-1)
 print(merged['Currency Vectorized'].head())
 
 lengths = merged['CurrencyUnit'].str.len()
-value_counts = lengths.value_counts(dropna=False)
+value_counts = lengths.value_counts(dropna=False
+
+pattern = r"[Nn]ational accounts"
+national_accounts = merged['SpecialNotes'].str.contains(pattern)
+print(national_accounts.head())
