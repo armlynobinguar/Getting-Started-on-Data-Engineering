@@ -145,3 +145,11 @@ email_tests = pd.Series(['email', 'Email', 'e Mail', 'e mail', 'E-mail',
               'E-Mails'])
 pattern = r"\be[\-\s]?mails?\b"
 email_mentions = titles.str.contains(pattern, flags=re.I).sum()
+
+import pandas as pd
+import re
+
+hn = pd.read_csv("hacker_news.csv")
+titles = hn['title']
+sql_pattern = r"SQL"
+sql_counts = titles.str.contains(sql_pattern, flags=re.I).sum()
