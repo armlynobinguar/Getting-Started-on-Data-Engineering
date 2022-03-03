@@ -137,3 +137,11 @@ beginning_count = titles.str.contains(pattern_beginning).sum()
 
 pattern_ending =  r"\[\w+\]$"
 ending_count = titles.str.contains(pattern_ending).sum()
+
+import re
+
+email_tests = pd.Series(['email', 'Email', 'e Mail', 'e mail', 'E-mail',
+              'e-mail', 'eMail', 'E-Mail', 'EMAIL', 'emails', 'Emails',
+              'E-Mails'])
+pattern = r"\be[\-\s]?mails?\b"
+email_mentions = titles.str.contains(pattern, flags=re.I).sum()
