@@ -272,3 +272,7 @@ def get_num_comments(story):
     return story['numComments']
 
 most_comments = max(hn_clean, key=get_num_comments)
+
+# def multiply(a, b):
+#    return a * b
+multiply = lambda a, b: a * b
