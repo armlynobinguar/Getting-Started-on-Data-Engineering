@@ -113,3 +113,7 @@ email_titles = titles[email_bool]
 pattern = "\[\w+\]"
 tag_titles = titles[titles.str.contains(pattern)]
 tag_count = tag_titles.shape[0]
+
+# pattern = r"\[\w+\]"
+pattern = r"\[(\w+)\]"
+tag_freq = titles.str.extract(pattern, expand=False).value_counts()
