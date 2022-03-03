@@ -128,3 +128,6 @@ def first_10_matches(pattern):
     return first_10
 pattern = r"[Jj]ava[^Ss]"
 java_titles = titles[titles.str.contains(pattern)]
+
+pattern = r"\b[Jj]ava\b"
+java_titles = titles[titles.str.contains(pattern)]
