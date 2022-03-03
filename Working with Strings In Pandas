@@ -66,3 +66,8 @@ print(combined[dups])
 
 combined['COUNTRY'] = combined['COUNTRY'].str.upper()
 combined = combined.drop_duplicates(['COUNTRY', 'YEAR'])
+
+
+columns_to_drop = ['LOWER CONFIDENCE INTERVAL', 'STANDARD ERROR', 'UPPER CONFIDENCE INTERVAL', 'WHISKER HIGH', 'WHISKER LOW']
+combined = combined.drop(columns_to_drop, axis = 1)
+missing = combined.isnull().sum()
