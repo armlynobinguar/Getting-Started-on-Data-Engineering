@@ -379,3 +379,12 @@ vehicles = mvc[v_cols]
 vehicles_1d = vehicles.stack()
 vehicles_counts = vehicles_1d.value_counts()
 top10_vehicles = vehicles_counts.head(10)
+
+sup_data = pd.read_csv('supplemental_data.csv')
+
+location_cols = ['location', 'on_street', 'off_street', 'borough']
+null_before = mvc[location_cols].isnull().sum()
+for col in location_cols:
+    mvc[col] = mvc[col].mask(mvc[col].isnull(), sup_data[col])
+
+null_after = mvc[location_cols].isnull().sum()
