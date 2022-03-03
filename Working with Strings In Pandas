@@ -85,3 +85,13 @@ missing = combined.isnull().sum()
 
 import pandas as pd
 hn = pd.read_csv("hacker_news.csv")
+
+import re
+
+titles = hn["title"].tolist()
+python_mentions = 0
+pattern = "[Pp]ython"
+
+for t in titles:
+    if re.search(pattern, t):
+        python_mentions += 1
