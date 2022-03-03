@@ -179,3 +179,11 @@ c_mentions = titles.str.contains(pattern).sum()
 pattern = r"\b(\w+)\s\1\b"
 
 repeated_words = titles[titles.str.contains(pattern)]
+
+
+email_variations = pd.Series(['email', 'Email', 'e Mail',
+                        'e mail', 'E-mail', 'e-mail',
+                        'eMail', 'E-Mail', 'EMAIL'])
+pattern = r"\be[-\s]?mail"
+email_uniform = email_variations.str.replace(pattern, "email", flags=re.I)
+titles_clean = titles.str.replace(pattern, "email", flags=re.I)
