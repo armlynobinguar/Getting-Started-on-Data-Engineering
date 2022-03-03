@@ -103,3 +103,9 @@ python_mentions = titles.str.contains(pattern).sum()
 
 titles = hn['title']
 ruby_titles = titles[titles.str.contains(r"[Rr]uby")]
+
+# The `titles` variable is available from
+# the previous screens
+email_bool = titles.str.contains("e-?mail")
+email_count = email_bool.sum()
+email_titles = titles[email_bool]
