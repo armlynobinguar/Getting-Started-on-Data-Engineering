@@ -153,3 +153,8 @@ hn = pd.read_csv("hacker_news.csv")
 titles = hn['title']
 sql_pattern = r"SQL"
 sql_counts = titles.str.contains(sql_pattern, flags=re.I).sum()
+
+pattern = r"[Pp]ython ([\d\.]+)"
+
+py_versions = titles.str.extract(pattern, expand=False)
+py_versions_freq = dict(py_versions.value_counts())
