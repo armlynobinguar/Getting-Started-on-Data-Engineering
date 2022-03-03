@@ -213,3 +213,7 @@ pattern = r"(https?)://([\w\.\-]+)/?(.*)"
 
 test_url_parts = test_urls.str.extract(pattern, flags=re.I)
 url_parts = hn['url'].str.extract(pattern, flags=re.I)
+
+# pattern = r"(https?)://([\w\.\-]+)/?(.*)"
+pattern = r"(?P<protocol>https?)://(?P<domain>[\w\.\-]+)/?(?P<path>.*)"
+url_parts = hn['url'].str.extract(pattern, flags=re.I)
