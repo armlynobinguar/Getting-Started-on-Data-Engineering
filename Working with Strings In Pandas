@@ -373,3 +373,9 @@ for v in range(1,6):
     vc_null_data.append([v, v_null, c_null])
 
 vc_null_df = pd.DataFrame(vc_null_data, columns=col_labels)
+
+v_cols = [c for c in mvc.columns if c.startswith("vehicle")]
+vehicles = mvc[v_cols]
+vehicles_1d = vehicles.stack()
+vehicles_counts = vehicles_1d.value_counts()
+top10_vehicles = vehicles_counts.head(10)
