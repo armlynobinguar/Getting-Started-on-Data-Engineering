@@ -236,3 +236,6 @@ world_cup_str = """
 """
 import json
 world_cup_obj = json.loads(world_cup_str)
+
+file = open("hn_2014.json")
+hn = json.load(file)
