@@ -37,3 +37,7 @@ merged['IncomeGroup'] = merged['IncomeGroup'].str.replace(' income', '').str.rep
 pv_incomes = merged.pivot_table(values='Happiness Score', index='IncomeGroup')
 pv_incomes.plot(kind='bar', rot=30, ylim=(0,10))
 plt.show()
+
+shape_2015 = happiness2015.shape
+shape_2016 = happiness2016.shape
+shape_2017 = happiness2017.shape
