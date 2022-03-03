@@ -11,3 +11,8 @@ value_counts = lengths.value_counts(dropna=False
 pattern = r"[Nn]ational accounts"
 national_accounts = merged['SpecialNotes'].str.contains(pattern)
 print(national_accounts.head())
+
+pattern = r"[Nn]ational accounts"
+national_accounts = merged['SpecialNotes'].str.contains(r"[Nn]ational accounts", na=False)
+merged_national_accounts = merged[national_accounts]
+print(merged_national_accounts.head())
