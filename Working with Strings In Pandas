@@ -187,3 +187,23 @@ email_variations = pd.Series(['email', 'Email', 'e Mail',
 pattern = r"\be[-\s]?mail"
 email_uniform = email_variations.str.replace(pattern, "email", flags=re.I)
 titles_clean = titles.str.replace(pattern, "email", flags=re.I)
+
+
+test_urls = pd.Series([
+ 'https://www.amazon.com/Technology-Ventures-Enterprise-Thomas-Byers/dp/0073523429',
+ 'http://www.interactivedynamicvideo.com/',
+ 'http://www.nytimes.com/2007/11/07/movies/07stein.html?_r=0',
+ 'http://evonomics.com/advertising-cannot-maintain-internet-heres-solution/',
+ 'HTTPS://github.com/keppel/pinn',
+ 'Http://phys.org/news/2015-09-scale-solar-youve.html',
+ 'https://iot.seeed.cc',
+ 'http://www.bfilipek.com/2016/04/custom-deleters-for-c-smart-pointers.html',
+ 'http://beta.crowdfireapp.com/?beta=agnipath',
+ 'https://www.valid.ly?param',
+ 'http://css-cursor.techstream.org'
+])
+pattern = r"https?://([\w\-\.]+)"
+
+test_urls_clean = test_urls.str.extract(pattern, flags=re.I, expand=False)
+domains = hn['url'].str.extract(pattern, flags=re.I, expand=False)
+top_domains = domains.value_counts().head(5)
