@@ -109,3 +109,7 @@ ruby_titles = titles[titles.str.contains(r"[Rr]uby")]
 email_bool = titles.str.contains("e-?mail")
 email_count = email_bool.sum()
 email_titles = titles[email_bool]
+
+pattern = "\[\w+\]"
+tag_titles = titles[titles.str.contains(pattern)]
+tag_count = tag_titles.shape[0]
