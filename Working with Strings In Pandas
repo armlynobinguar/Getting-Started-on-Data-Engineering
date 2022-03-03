@@ -207,3 +207,9 @@ pattern = r"https?://([\w\-\.]+)"
 test_urls_clean = test_urls.str.extract(pattern, flags=re.I, expand=False)
 domains = hn['url'].str.extract(pattern, flags=re.I, expand=False)
 top_domains = domains.value_counts().head(5)
+
+# `test_urls` is available from the previous screen
+pattern = r"(https?)://([\w\.\-]+)/?(.*)"
+
+test_url_parts = test_urls.str.extract(pattern, flags=re.I)
+url_parts = hn['url'].str.extract(pattern, flags=re.I)
