@@ -252,3 +252,12 @@ hn_clean = []
 for d in hn:
     new_d = del_key(d, 'createdAtI')
     hn_clean.append(new_d)
+    
+# LOOP VERSION
+#
+# hn_clean = []
+#
+# for d in hn:
+#     new_d = del_key(d, 'createdAtI')
+#     hn_clean.append(new_d)
+hn_clean = [del_key(d, 'createdAtI') for d in hn]
