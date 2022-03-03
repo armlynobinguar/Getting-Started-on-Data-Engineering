@@ -355,3 +355,21 @@ def plot_null_correlations(df):
     plt.show()
 veh_cols = [c for c in mvc.columns if 'vehicle' in c]
 plot_null_correlations(mvc[veh_cols])
+
+col_labels = ['v_number', 'vehicle_missing', 'cause_missing']
+
+vc_null_data = []
+
+# for v in range(1,6):
+#     v_col = 'vehicle_{}'.format(v)
+#     c_col = 'cause_vehicle_{}'.format(v)
+for v in range(1,6):
+    v_col = 'vehicle_{}'.format(v)
+    c_col = 'cause_vehicle_{}'.format(v)
+    
+    v_null = (mvc[v_col].isnull() & mvc[c_col].notnull()).sum()
+    c_null = (mvc[c_col].isnull() & mvc[v_col].notnull()).sum()
+    
+    vc_null_data.append([v, v_null, c_null])
+
+vc_null_df = pd.DataFrame(vc_null_data, columns=col_labels)
