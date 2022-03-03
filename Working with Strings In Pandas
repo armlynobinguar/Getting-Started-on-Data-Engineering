@@ -95,3 +95,8 @@ pattern = "[Pp]ython"
 for t in titles:
     if re.search(pattern, t):
         python_mentions += 1
+
+
+pattern = '[Pp]ython'
+titles = hn['title']
+python_mentions = titles.str.contains(pattern).sum()
