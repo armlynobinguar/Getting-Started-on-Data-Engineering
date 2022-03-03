@@ -263,3 +263,6 @@ for d in hn:
 hn_clean = [del_key(d, 'createdAtI') for d in hn]
 
 urls = [d['url'] for d in hn_clean]
+
+thousand_points = [d for d in hn_clean if d['points'] > 1000]
+num_thousand_points = len(thousand_points)
