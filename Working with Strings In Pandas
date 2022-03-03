@@ -266,3 +266,9 @@ urls = [d['url'] for d in hn_clean]
 
 thousand_points = [d for d in hn_clean if d['points'] > 1000]
 num_thousand_points = len(thousand_points)
+
+
+def get_num_comments(story):
+    return story['numComments']
+
+most_comments = max(hn_clean, key=get_num_comments)
