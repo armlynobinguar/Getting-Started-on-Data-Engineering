@@ -276,3 +276,7 @@ most_comments = max(hn_clean, key=get_num_comments)
 # def multiply(a, b):
 #    return a * b
 multiply = lambda a, b: a * b
+
+
+hn_sorted_points = sorted(hn_clean, key=lambda d: d['points'], reverse=True)
+top_5_titles = [d['title'] for d in hn_sorted_points[:5]]
