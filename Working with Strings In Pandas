@@ -158,3 +158,17 @@ pattern = r"[Pp]ython ([\d\.]+)"
 
 py_versions = titles.str.extract(pattern, expand=False)
 py_versions_freq = dict(py_versions.value_counts())
+
+
+def first_10_matches(pattern):
+    """
+    Return the first 10 story titles that match
+    the provided regular expression
+    """
+    all_matches = titles[titles.str.contains(pattern)]
+    first_10 = all_matches.head(10)
+    return first_10
+
+# pattern = r"\b[Cc]\b"
+pattern = r"\b[Cc]\b[^.+]"
+first_ten = first_10_matches(pattern)
