@@ -294,3 +294,7 @@ four_tags = tags[has_four_tags]
 #     return l[-1] if len(l) == 4 else None
 cleaned_tags = tags.apply(lambda l: l[-1] if len(l) == 4 else None)
 hn_df['tags'] = cleaned_tags
+
+import pandas as pd
+mvc = pd.read_csv("nypd_mvc_2018.csv")
+null_counts = mvc.isnull().sum()
