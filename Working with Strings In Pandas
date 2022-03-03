@@ -26,3 +26,8 @@ pattern = r"(?P<Years>[1-2][0-9]{3})"
 years = merged['IESurvey'].str.extractall(pattern)
 value_counts = years['Years'].value_counts()
 print(value_counts)
+
+pattern = r"(?P<First_Year>[1-2][0-9]{3})/?(?P<Second_Year>[0-9]{2})?"
+years = merged['IESurvey'].str.extractall(pattern)
+first_two_year = years['First_Year'].str[0:2]
+years['Second_Year'] = first_two_year + years['Second_Year']
