@@ -175,3 +175,7 @@ first_ten = first_10_matches(pattern)
 
 pattern = r"(?<!Series\s)\b[Cc]\b((?![+.])|\.$)"
 c_mentions = titles.str.contains(pattern).sum()
+
+pattern = r"\b(\w+)\s\1\b"
+
+repeated_words = titles[titles.str.contains(pattern)]
