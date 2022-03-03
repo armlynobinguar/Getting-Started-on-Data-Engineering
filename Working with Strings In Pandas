@@ -1,0 +1,9 @@
+def extract_last_word(element):
+    return str(element).split()[-1]
+merged['Currency Apply'] = merged['CurrencyUnit'].apply(extract_last_word)
+
+merged['Currency Vectorized'] = merged['CurrencyUnit'].str.split().str.get(-1)
+print(merged['Currency Vectorized'].head())
+
+lengths = merged['CurrencyUnit'].str.len()
+value_counts = lengths.value_counts(dropna=False)
