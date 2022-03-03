@@ -31,3 +31,9 @@ pattern = r"(?P<First_Year>[1-2][0-9]{3})/?(?P<Second_Year>[0-9]{2})?"
 years = merged['IESurvey'].str.extractall(pattern)
 first_two_year = years['First_Year'].str[0:2]
 years['Second_Year'] = first_two_year + years['Second_Year']
+
+
+merged['IncomeGroup'] = merged['IncomeGroup'].str.replace(' income', '').str.replace(':', '').str.upper()
+pv_incomes = merged.pivot_table(values='Happiness Score', index='IncomeGroup')
+pv_incomes.plot(kind='bar', rot=30, ylim=(0,10))
+plt.show()
