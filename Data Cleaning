@@ -126,3 +126,9 @@ for col in cols:
     data["ap_2010"][col] = pd.to_numeric(data["ap_2010"][col], errors="coerce")
     
 print(data["ap_2010"].dtypes)
+
+combined = data["sat_results"]
+combined = combined.merge(data["ap_2010"], on="DBN", how="left")
+combined = combined.merge(data["graduation"], on="DBN", how="left")
+print(combined.head(5))
+print(combined.shape)
