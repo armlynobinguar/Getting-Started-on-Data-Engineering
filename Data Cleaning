@@ -191,3 +191,8 @@ def clean_deaths(row):
     return num_deaths
 
 true_avengers['Deaths'] = true_avengers.apply(clean_deaths, axis=1)
+
+
+joined_accuracy_count  = int()
+correct_joined_years = true_avengers[true_avengers['Years since joining'] == (2015 - true_avengers['Year'])]
+joined_accuracy_count = len(correct_joined_years)
