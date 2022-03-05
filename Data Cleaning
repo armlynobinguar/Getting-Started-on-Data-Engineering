@@ -101,3 +101,8 @@ data["hs_directory"]["lat"] = pd.to_numeric(data["hs_directory"]["lat"], errors=
 data["hs_directory"]["lon"] = pd.to_numeric(data["hs_directory"]["lon"], errors="coerce")
 
 print(data["hs_directory"].head())
+
+class_size = data["class_size"]
+class_size = class_size[class_size["GRADE "] == "09-12"]
+class_size = class_size[class_size["PROGRAM TYPE"] == "GEN ED"]
+print(class_size.head())
