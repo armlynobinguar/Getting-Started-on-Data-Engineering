@@ -132,3 +132,11 @@ combined = combined.merge(data["ap_2010"], on="DBN", how="left")
 combined = combined.merge(data["graduation"], on="DBN", how="left")
 print(combined.head(5))
 print(combined.shape)
+
+to_merge = ["class_size", "demographics", "survey", "hs_directory"]
+
+for m in to_merge:
+    combined = combined.merge(data[m], on="DBN", how="inner")
+
+print(combined.head(5))
+print(combined.shape)
