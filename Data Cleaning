@@ -22,3 +22,9 @@ print(data["sat_results"].head())
 
 for k in data:
     print(data[k].head())
+    
+    all_survey = pd.read_csv("schools/survey_all.txt", delimiter="\t", encoding='windows-1252')
+d75_survey = pd.read_csv("schools/survey_d75.txt", delimiter="\t", encoding='windows-1252')
+survey = pd.concat([all_survey, d75_survey], axis=0)
+
+print(survey.head())
