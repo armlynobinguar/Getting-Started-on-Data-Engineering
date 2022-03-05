@@ -14,3 +14,6 @@ for f in data_files:
     d = pd.read_csv("schools/{0}".format(f))
     key_name = f.replace(".csv", "")
     data[key_name] = d
+
+
+print(data["sat_results"].head())
