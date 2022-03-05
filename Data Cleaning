@@ -145,3 +145,9 @@ combined = combined.fillna(combined.mean())
 combined = combined.fillna(0)
 
 print(combined.head(5))
+
+def get_first_two_chars(dbn):
+    return dbn[0:2]
+
+combined["school_dist"] = combined["DBN"].apply(get_first_two_chars)
+print(combined["school_dist"].head())
