@@ -115,3 +115,8 @@ print(data["class_size"].head())
 
 data["demographics"] = data["demographics"][data["demographics"]["schoolyear"] == 20112012]
 print(data["demographics"].head())
+
+
+data["graduation"] = data["graduation"][data["graduation"]["Cohort"] == "2006"]
+data["graduation"] = data["graduation"][data["graduation"]["Demographic"] == "Total Cohort"]
+print(data["graduation"].head())
