@@ -171,3 +171,9 @@ import numpy
 districts = combined.groupby("school_dist").agg(numpy.mean)
 districts.reset_index(inplace=True)
 print(districts.head())
+
+import matplotlib.pyplot as plt
+true_avengers = pd.DataFrame()
+
+avengers['Year'].hist()
+true_avengers = avengers[avengers["Year"] > 1959]
