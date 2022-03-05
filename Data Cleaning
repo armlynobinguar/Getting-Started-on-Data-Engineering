@@ -155,3 +155,7 @@ print(combined["school_dist"].head())
 correlations = combined.corr()
 correlations = correlations["sat_score"]
 print(correlations)
+
+import matplotlib.pyplot as plt
+combined.plot.scatter(x='total_enrollment', y='sat_score')
+plt.show()
