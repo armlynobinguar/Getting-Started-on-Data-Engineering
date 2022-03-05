@@ -70,3 +70,11 @@ def pad_csd(num):
 data["class_size"]["padded_csd"] = data["class_size"]["CSD"].apply(pad_csd)
 data["class_size"]["DBN"] = data["class_size"]["padded_csd"] + data["class_size"]["SCHOOL CODE"]
 print(data["class_size"].head())
+
+
+cols = ['SAT Math Avg. Score', 'SAT Critical Reading Avg. Score', 'SAT Writing Avg. Score']
+for c in cols:
+    data["sat_results"][c] = pd.to_numeric(data["sat_results"][c], errors="coerce")
+
+data['sat_results']['sat_score'] = data['sat_results'][cols[0]] + data['sat_results'][cols[1]] + data['sat_results'][cols[2]]
+print(data['sat_results']['sat_score'].head())
