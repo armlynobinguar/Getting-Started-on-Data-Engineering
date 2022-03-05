@@ -106,3 +106,9 @@ class_size = data["class_size"]
 class_size = class_size[class_size["GRADE "] == "09-12"]
 class_size = class_size[class_size["PROGRAM TYPE"] == "GEN ED"]
 print(class_size.head())
+
+import numpy
+class_size = class_size.groupby("DBN").agg(numpy.mean)
+class_size.reset_index(inplace=True)
+data["class_size"] = class_size
+print(data["class_size"].head())
