@@ -166,3 +166,8 @@ print(low_enrollment["School Name"])
 
 combined.plot.scatter(x='ell_percent', y='sat_score')
 plt.show()
+
+import numpy
+districts = combined.groupby("school_dist").agg(numpy.mean)
+districts.reset_index(inplace=True)
+print(districts.head())
