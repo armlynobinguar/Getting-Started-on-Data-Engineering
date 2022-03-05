@@ -112,3 +112,6 @@ class_size = class_size.groupby("DBN").agg(numpy.mean)
 class_size.reset_index(inplace=True)
 data["class_size"] = class_size
 print(data["class_size"].head())
+
+data["demographics"] = data["demographics"][data["demographics"]["schoolyear"] == 20112012]
+print(data["demographics"].head())
