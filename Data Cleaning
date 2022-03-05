@@ -151,3 +151,7 @@ def get_first_two_chars(dbn):
 
 combined["school_dist"] = combined["DBN"].apply(get_first_two_chars)
 print(combined["school_dist"].head())
+
+correlations = combined.corr()
+correlations = correlations["sat_score"]
+print(correlations)
