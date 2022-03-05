@@ -88,3 +88,16 @@ def find_lat(loc):
 data["hs_directory"]["lat"] = data["hs_directory"]["Location 1"].apply(find_lat)
 
 print(data["hs_directory"].head())
+
+import re
+def find_lon(loc):
+    coords = re.findall("\(.+\)", loc)
+    lon = coords[0].split(",")[1].replace(")", "").strip()
+    return lon
+
+data["hs_directory"]["lon"] = data["hs_directory"]["Location 1"].apply(find_lon)
+
+data["hs_directory"]["lat"] = pd.to_numeric(data["hs_directory"]["lat"], errors="coerce")
+data["hs_directory"]["lon"] = pd.to_numeric(data["hs_directory"]["lon"], errors="coerce")
+
+print(data["hs_directory"].head())
