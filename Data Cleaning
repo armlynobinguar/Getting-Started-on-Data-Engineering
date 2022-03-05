@@ -78,3 +78,13 @@ for c in cols:
 
 data['sat_results']['sat_score'] = data['sat_results'][cols[0]] + data['sat_results'][cols[1]] + data['sat_results'][cols[2]]
 print(data['sat_results']['sat_score'].head())
+
+import re
+def find_lat(loc):
+    coords = re.findall("\(.+\)", loc)
+    lat = coords[0].split(",")[0].replace("(", "")
+    return lat
+
+data["hs_directory"]["lat"] = data["hs_directory"]["Location 1"].apply(find_lat)
+
+print(data["hs_directory"].head())
