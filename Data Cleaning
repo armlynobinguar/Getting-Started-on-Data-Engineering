@@ -163,3 +163,6 @@ plt.show()
 low_enrollment = combined[combined["total_enrollment"] < 1000]
 low_enrollment = low_enrollment[low_enrollment["sat_score"] < 1000]
 print(low_enrollment["School Name"])
+
+combined.plot.scatter(x='ell_percent', y='sat_score')
+plt.show()
