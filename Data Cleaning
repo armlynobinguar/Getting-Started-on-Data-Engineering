@@ -140,3 +140,8 @@ for m in to_merge:
 
 print(combined.head(5))
 print(combined.shape)
+
+combined = combined.fillna(combined.mean())
+combined = combined.fillna(0)
+
+print(combined.head(5))
