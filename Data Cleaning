@@ -60,3 +60,13 @@ survey = survey.loc[:,survey_fields]
 data["survey"] = survey
 
 print(survey.head())
+
+
+data["hs_directory"]["DBN"] = data["hs_directory"]["dbn"]
+
+def pad_csd(num):
+    return str(num).zfill(2)
+    
+data["class_size"]["padded_csd"] = data["class_size"]["CSD"].apply(pad_csd)
+data["class_size"]["DBN"] = data["class_size"]["padded_csd"] + data["class_size"]["SCHOOL CODE"]
+print(data["class_size"].head())
