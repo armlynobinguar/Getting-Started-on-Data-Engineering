@@ -34,3 +34,20 @@ SELECT * from customer_usa
 UNION
 
 SELECT * from customer_gt_90_dollars;
+
+WITH customers_usa_gt_90 AS
+    (
+     SELECT * FROM customer_usa
+
+     INTERSECT
+
+     SELECT * FROM customer_gt_90_dollars
+    )
+
+SELECT
+    e.first_name || " " || e.last_name employee_name,
+    COUNT(c.customer_id) customers_usa_gt_90
+FROM employee e
+LEFT JOIN customers_usa_gt_90 c ON c.support_rep_id = e.employee_id
+WHERE e.title = 'Sales Support Agent'
+GROUP BY 1 ORDER BY 1;
