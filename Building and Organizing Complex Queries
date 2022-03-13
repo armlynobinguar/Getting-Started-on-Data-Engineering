@@ -28,3 +28,9 @@ CREATE VIEW chinook.customer_gt_90_dollars AS
     GROUP BY 1
     HAVING SUM(i.total) > 90;
 SELECT * FROM chinook.customer_gt_90_dollars;
+
+SELECT * from customer_usa
+
+UNION
+
+SELECT * from customer_gt_90_dollars;
