@@ -48,3 +48,7 @@ question3 = True
 wnba = pd.read_csv('wnba.csv')
 grouped_freq_table = wnba['PTS'].value_counts(bins = 10,
                 normalize = True).sort_index(ascending = False) * 100
+                
+wnba = pd.read_csv('wnba.csv')
+intervals = pd.interval_range(start = 0, end = 600, freq = 60)
+gr_freq_table_10 = wnba["PTS"].value_counts(bins = intervals).sort_index()
