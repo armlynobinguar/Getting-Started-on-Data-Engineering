@@ -51,3 +51,25 @@ FROM employee e
 LEFT JOIN customers_usa_gt_90 c ON c.support_rep_id = e.employee_id
 WHERE e.title = 'Sales Support Agent'
 GROUP BY 1 ORDER BY 1;
+
+WITH
+    customers_india AS
+        (
+        SELECT * FROM customer
+        WHERE country = "India"
+        ),
+    sales_per_customer AS
+        (
+         SELECT
+             customer_id,
+             SUM(total) total
+         FROM invoice
+         GROUP BY 1
+        )
+
+SELECT
+    ci.first_name || " " || ci.last_name customer_name,
+    spc.total total_purchases
+FROM customers_india ci
+INNER JOIN sales_per_customer spc ON ci.customer_id = spc.customer_id
+ORDER BY 1;
