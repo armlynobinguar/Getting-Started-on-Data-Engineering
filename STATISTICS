@@ -29,3 +29,21 @@ for i in range(100):
 
 plt.scatter(range(1,101), sample_means)
 plt.axhline(population_mean)
+
+wnba['Pts_per_game'] = wnba['PTS'] / wnba['Games Played']
+
+# Stratifying the data in five strata
+stratum_G = wnba[wnba.Pos == 'G']
+stratum_F = wnba[wnba.Pos == 'F']
+stratum_C = wnba[wnba.Pos == 'C']
+stratum_GF = wnba[wnba.Pos == 'G/F']
+stratum_FC = wnba[wnba.Pos == 'F/C']
+
+points_per_position = {}
+for stratum, position in [(stratum_G, 'G'), (stratum_F, 'F'), (stratum_C, 'C'),
+                (stratum_GF, 'G/F'), (stratum_FC, 'F/C')]:
+    
+    sample = stratum['Pts_per_game'].sample(10, random_state = 0) # simple random sampling on each stratum
+    points_per_position[position] = sample.mean()
+    
+position_most_points = max(points_per_position, key = points_per_position.get)
