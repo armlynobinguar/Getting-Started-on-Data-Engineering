@@ -28,3 +28,15 @@ interval = ['Birthdate', 'Weight_deviation']
 ratio = sorted(['Height', 'Weight', 'BMI', 'Age', 'Experience', 'Games Played', 'MIN', 'FGM', 'FGA', 'FG%', '15:00', 
                 '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TO',
                 'PTS', 'DD2', 'TD3'])
+
+ratio_interval_only = {'Height':'', 'Weight': '', 'BMI': '', 'Age': '', 'Games Played': '', 'MIN': '', 'FGM': '',
+                       'FGA': '', 'FG%': '', '3PA': '', '3P%': '', 'FTM': '', 'FTA': '', 'FT%': '',
+                       'OREB': '', 'DREB': '', 'REB': '', 'AST': '', 'STL': '', 'BLK': '', 'TO': '',
+                       'PTS': '', 'DD2': '', 'TD3': '', 'Weight_deviation': ''}
+ratio_interval_only = {'Height': 'continuous', 'Weight': 'continuous', 'BMI': 'continuous', 'Age': 'continuous',
+                       'Games Played': 'discrete', 'MIN': 'continuous', 'FGM': 'discrete',
+                       'FGA': 'discrete', 'FG%': 'continuous', '3PA': 'discrete', '3P%': 'continuous',
+                       'FTM': 'discrete', 'FTA': 'discrete', 'FT%': 'continuous', 'OREB': 'discrete',
+                       'DREB': 'discrete', 'REB': 'discrete', 'AST': 'discrete', 'STL': 'discrete',
+                       'BLK': 'discrete', 'TO': 'discrete', 'PTS': 'discrete', 'DD2': 'discrete', 
+                       'TD3': 'discrete', 'Weight_deviation': 'continuous'}
