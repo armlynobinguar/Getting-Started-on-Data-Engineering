@@ -40,3 +40,14 @@ ratio_interval_only = {'Height': 'continuous', 'Weight': 'continuous', 'BMI': 'c
                        'DREB': 'discrete', 'REB': 'discrete', 'AST': 'discrete', 'STL': 'discrete',
                        'BLK': 'discrete', 'TO': 'discrete', 'PTS': 'discrete', 'DD2': 'discrete', 
                        'TD3': 'discrete', 'Weight_deviation': 'continuous'}
+                       
+bmi = {21.201: [],
+ 21.329: [],
+ 23.875: [],
+ 24.543: [],
+ 25.469: []}
+bmi = {21.201: [21.2005, 21.2015],
+ 21.329: [21.3285, 21.3295],
+ 23.875: [23.8745, 23.8755],
+ 24.543: [24.5425, 24.5435],
+ 25.469: [25.4685, 25.4695]}
