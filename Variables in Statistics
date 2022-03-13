@@ -23,3 +23,8 @@ question3 = False
 question4 = True
 question5 = False
 question6 = False
+
+interval = ['Birthdate', 'Weight_deviation']
+ratio = sorted(['Height', 'Weight', 'BMI', 'Age', 'Experience', 'Games Played', 'MIN', 'FGM', 'FGA', 'FG%', '15:00', 
+                '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TO',
+                'PTS', 'DD2', 'TD3'])
