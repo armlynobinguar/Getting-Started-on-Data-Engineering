@@ -67,3 +67,5 @@ wnba['Exp_ordinal'].value_counts().plot.pie(figsize = (6,6), autopct = '%.2f%%',
 plt.ylabel('')
 
 wnba['PTS'].plot.hist()
+
+wnba['Games Played'].plot.hist()
