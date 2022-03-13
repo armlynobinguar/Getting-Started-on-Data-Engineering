@@ -57,3 +57,5 @@ wnba['Exp_ordinal'].value_counts().iloc[[3,0,2,1,4]].plot.bar()
 
 wnba['Exp_ordinal'].value_counts().iloc[[3,0,2,1,4]].plot.barh(
     title = 'Number of players in WNBA by level of experience')
+    
+wnba['Exp_ordinal'].value_counts().plot.pie()
