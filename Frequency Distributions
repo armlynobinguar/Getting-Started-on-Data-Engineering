@@ -6,3 +6,7 @@ pd.options.display.max_columns = 50
 wnba = pd.read_csv('wnba.csv')
 freq_distro_pos = wnba['Pos'].value_counts()
 freq_distro_height = wnba['Height'].value_counts()
+
+wnba = pd.read_csv('wnba.csv')
+age_ascending = wnba['Age'].value_counts().sort_index()
+age_descending = wnba['Age'].value_counts().sort_index(ascending = False)
