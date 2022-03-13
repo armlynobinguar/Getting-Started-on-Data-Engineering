@@ -16,3 +16,10 @@ variables = {'Name': 'qualitative', 'Team': 'qualitative', 'Pos': 'qualitative',
              'REB': 'quantitative', 'AST': 'quantitative', 'PTS': 'quantitative'}
              
 nominal_scale = sorted(['Name', 'Team', 'Pos', 'Birth_Place', 'College'])
+
+question1 = True
+question2 = False
+question3 = False
+question4 = True
+question5 = False
+question6 = False
