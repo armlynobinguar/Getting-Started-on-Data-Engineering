@@ -65,3 +65,5 @@ import matplotlib.pyplot as plt
 wnba['Exp_ordinal'].value_counts().plot.pie(figsize = (6,6), autopct = '%.2f%%',
                                     title = 'Percentage of players in WNBA by level of experience')
 plt.ylabel('')
+
+wnba['PTS'].plot.hist()
