@@ -59,3 +59,9 @@ wnba['Exp_ordinal'].value_counts().iloc[[3,0,2,1,4]].plot.barh(
     title = 'Number of players in WNBA by level of experience')
     
 wnba['Exp_ordinal'].value_counts().plot.pie()
+
+import matplotlib.pyplot as plt
+
+wnba['Exp_ordinal'].value_counts().plot.pie(figsize = (6,6), autopct = '%.2f%%',
+                                    title = 'Percentage of players in WNBA by level of experience')
+plt.ylabel('')
