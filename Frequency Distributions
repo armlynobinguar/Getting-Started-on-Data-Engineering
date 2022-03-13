@@ -35,3 +35,12 @@ from scipy.stats import percentileofscore
 percentile_rank_half_less = percentileofscore(wnba['Games Played'], 17, kind = 'weak')
 percentage_half_more = 100 - percentile_rank_half_less
 
+wnba = pd.read_csv('wnba.csv')
+percentiles = wnba['Age'].describe(percentiles = [.5, .75, .95])
+age_upper_quartile = percentiles['75%']
+age_middle_quartile = percentiles['50%']
+age_95th_percentile = percentiles['95%']
+
+question1 = True
+question2 = False
+question3 = True
