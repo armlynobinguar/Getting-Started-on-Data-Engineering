@@ -30,3 +30,8 @@ wnba['PTS_ordinal_scale'] = wnba.apply(make_pts_ordinal, axis = 1)
 # Type your answer below
 pts_ordinal_desc = wnba['PTS_ordinal_scale'].value_counts().iloc[[4, 3, 0, 2, 1, 5]]
 
+wnba = pd.read_csv('wnba.csv')
+from scipy.stats import percentileofscore
+percentile_rank_half_less = percentileofscore(wnba['Games Played'], 17, kind = 'weak')
+percentage_half_more = 100 - percentile_rank_half_less
+
