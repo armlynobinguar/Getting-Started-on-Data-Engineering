@@ -8,3 +8,10 @@ question2 = 'population'
 question3 = 'sample'
 question4 = 'population'
 question5 = 'sample'
+
+import pandas as pd
+wnba = pd.read_csv('wnba.csv')
+parameter = wnba['Games Played'].max()
+sample = wnba['Games Played'].sample(30, random_state = 1)
+statistic = sample.max()
+sampling_error = parameter - statistic
