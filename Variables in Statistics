@@ -14,3 +14,5 @@ variables = {'Name': 'qualitative', 'Team': 'qualitative', 'Pos': 'qualitative',
              '3PA': 'quantitative', 'FTM': 'quantitative',
              'FTA': 'quantitative', 'FT%': 'quantitative', 'OREB': 'quantitative', 'DREB': 'quantitative',
              'REB': 'quantitative', 'AST': 'quantitative', 'PTS': 'quantitative'}
+             
+nominal_scale = sorted(['Name', 'Team', 'Pos', 'Birth_Place', 'College'])
