@@ -64,3 +64,16 @@ for i in range(100):
     
 plt.scatter(range(1,101), proportional_sampling_means)
 plt.axhline(wnba['PTS'].mean())
+
+clusters = pd.Series(wnba['Team'].unique()).sample(4, random_state = 0)
+
+sample = pd.DataFrame()
+
+for cluster in clusters:
+    data_collected = wnba[wnba['Team'] == cluster]
+    sample = sample.append(data_collected)
+
+sampling_error_height = wnba['Height'].mean() - sample['Height'].mean()
+sampling_error_age = wnba['Age'].mean() - sample['Age'].mean()
+sampling_error_BMI = wnba['BMI'].mean() - sample['BMI'].mean()
+sampling_error_points = wnba['PTS'].mean() - sample['PTS'].mean()
