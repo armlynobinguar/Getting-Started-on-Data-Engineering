@@ -54,3 +54,6 @@ intervals = pd.interval_range(start = 0, end = 600, freq = 60)
 gr_freq_table_10 = wnba["PTS"].value_counts(bins = intervals).sort_index()
 
 wnba['Exp_ordinal'].value_counts().iloc[[3,0,2,1,4]].plot.bar()
+
+wnba['Exp_ordinal'].value_counts().iloc[[3,0,2,1,4]].plot.barh(
+    title = 'Number of players in WNBA by level of experience')
