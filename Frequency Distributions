@@ -44,3 +44,7 @@ age_95th_percentile = percentiles['95%']
 question1 = True
 question2 = False
 question3 = True
+
+wnba = pd.read_csv('wnba.csv')
+grouped_freq_table = wnba['PTS'].value_counts(bins = 10,
+                normalize = True).sort_index(ascending = False) * 100
