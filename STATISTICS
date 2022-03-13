@@ -15,3 +15,17 @@ parameter = wnba['Games Played'].max()
 sample = wnba['Games Played'].sample(30, random_state = 1)
 statistic = sample.max()
 sampling_error = parameter - statistic
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+wnba = pd.read_csv('wnba.csv')
+sample_means = []
+population_mean = wnba['PTS'].mean()
+
+for i in range(100):
+    sample = wnba['PTS'].sample(10, random_state=i)
+    sample_means.append(sample.mean())
+
+plt.scatter(range(1,101), sample_means)
+plt.axhline(population_mean)
