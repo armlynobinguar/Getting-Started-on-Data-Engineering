@@ -1,0 +1,1 @@
+wnba['Games Played'].plot.hist()
