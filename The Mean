@@ -238,3 +238,8 @@ def mode(array):
            )
 
 mode, value_counts = mode(houses['Roof Style'])
+
+bedroom_variable = 'discrete'
+bedroom_mode = houses['Bedroom AbvGr'].mode()
+
+price_variable = 'continuous'
