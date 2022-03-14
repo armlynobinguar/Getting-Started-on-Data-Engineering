@@ -79,3 +79,5 @@ p_c_d_formula = 4/6
 
 print(p_c_d_addition)
 print(p_c_d_formula)
+
+p_f_or_t = 0.26 + 0.11 - 0.03
