@@ -612,3 +612,11 @@ houses['z_2'] = houses['index_2'].apply(lambda x:
 
 print(houses[['z_1', 'z_2']].head(2))
 better = 'first'
+
+mean = 50
+st_dev = 10
+houses['transformed'] = houses['z_merged'].apply(
+                                lambda z: (z * st_dev + mean)
+                                )
+mean_transformed = houses['transformed'].mean()
+stdev_transformed = houses['transformed'].std(ddof = 0)
