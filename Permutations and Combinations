@@ -39,3 +39,26 @@ def permutation(n, k):
 
 total_n_outcomes = permutation(127, 16)
 p_crack_pass = 1/total_n_outcomes
+
+def factorial(n):
+    final_product = 1
+    for i in range(n, 0, -1):
+        final_product *= i
+    return final_product
+
+def permutation(n, k):
+    numerator = factorial(n)
+    denominator = factorial(n-k)
+    return numerator/denominator
+c = permutation(52,5) / factorial(5)
+p_aces_7 = 1/c
+
+c_lottery = permutation(49,6) / factorial(6)
+p_big_prize = 1/c_lottery
+print(p_big_prize)
+
+'''
+Note the output of p_big_prize ends in e-08
+This means we move eight decimals to the left
+So 7.1e-08 would become 0.000000071
+'''
