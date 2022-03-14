@@ -3,3 +3,6 @@ wnba['Games Played'].plot.hist()
 wnba['Games Played'].plot.hist(range = (1,32), bins = 8,
                                title = 'The distribution of players by games played')
 plt.xlabel('Games played')
+
+assists_distro = 'right skewed'
+ft_percent_distro = 'left skewed'
