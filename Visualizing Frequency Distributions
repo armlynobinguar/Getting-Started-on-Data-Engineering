@@ -30,3 +30,10 @@ sns.countplot(x = 'Exp_ordinal', hue = 'Pos', data = wnba,
              )
      sns.countplot(x = 'age_mean_relative', hue = 'min_mean_relative', data = wnba)
 result = 'rejection'
+
+import matplotlib.pyplot as plt
+wnba[wnba.Age >= 27]['MIN'].plot.hist(histtype = 'step', label = 'Old', legend = True)
+wnba[wnba.Age < 27]['MIN'].plot.hist(histtype = 'step', label = 'Young', legend = True)
+plt.axvline(497, label = 'Average')
+plt.legend()
+plt.show()
