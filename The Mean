@@ -35,3 +35,7 @@ for i in range(5000):
     sum_below = round(sum(below),1)
     if (sum_above == sum_below):
         equal_distances += 1
+        
+        one = False # we don't use the symbol mu for the sample mean
+two = False # Should be N = 8, not n = 8
+three = False # x-bar denotes the sample mean, not the population mean
