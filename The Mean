@@ -53,3 +53,11 @@ def mean(distribution):
 mean_1 = mean(distribution_1)
 mean_2 = mean(distribution_2)
 mean_3 = mean(distribution_3)
+
+import pandas as pd
+
+houses = pd.read_table('AmesHousing_1.txt')
+
+one = True # every column that describes years is measured on an interval scale
+two = False # `SalePrice` is measured on a ratio scale
+three = True # The data set has less values than the initial one with 3970 rows which we don't know either whether it represents a population
