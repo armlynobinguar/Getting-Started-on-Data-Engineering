@@ -168,3 +168,13 @@ middle_indices = [int((len(rooms_sorted) / 2) - 1),
                  ] # len - 1 and len because Series use 0-indexing 
 middle_values = rooms_sorted.iloc[middle_indices] # make sure you don't use loc[]
 median = middle_values.mean()
+
+import matplotlib.pyplot as plt
+
+houses['Lot Area'].plot.box()
+plt.show()
+houses['SalePrice'].plot.box()
+plt.show()
+
+lotarea_difference = houses['Lot Area'].mean() - houses['Lot Area'].median()
+saleprice_difference = houses['SalePrice'].mean() - houses['SalePrice'].median()
