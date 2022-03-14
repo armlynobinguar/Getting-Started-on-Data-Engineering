@@ -190,3 +190,10 @@ The mean seems more representative and more informative because it captures the
 fact that there are more houses rated above 5 than rated under 5. Because of this,
 the mean is slightly shifted above 5. 
 '''
+
+import pandas as pd
+houses = pd.read_table('AmesHousing_1.txt')
+
+scale_land = 'ordinal'
+scale_roof = 'nominal'
+kitchen_variable = 'discrete'
