@@ -49,3 +49,10 @@ category play significantly more than average. With the help of the vertical lin
 is very easy to notice. Because the graph looks much cleaner than the one with step-type
 histograms, we can easily argue that the pattern is much more obvious in the case of kernel density
 plots.'''
+
+sns.stripplot(x = 'Pos', y = 'Weight', data = wnba, jitter = True)
+plt.show()
+
+'''The patterns we see are strikingly similar to those we saw for heights. This can be easily
+explained by the fact that there's a strong positive relation between a player's height and her
+weight: the taller the player, the heavier she is; the shorter the player, the lighter she is.'''
