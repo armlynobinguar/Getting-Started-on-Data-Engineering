@@ -22,3 +22,9 @@ veteran_distro = veterans['Pos'].value_counts()
 
 print(rookie_distro, '\n\n', little_xp_distro, '\n\n', experienced_distro, '\n\n',
       very_xp_distro, '\n\n', veteran_distro)
+
+import seaborn as sns
+sns.countplot(x = 'Exp_ordinal', hue = 'Pos', data = wnba,
+              order = ['Rookie', 'Little experience', 'Experienced', 'Very experienced', 'Veteran'],
+              hue_order = ['C', 'F', 'F/C', 'G', 'G/F']
+             )
