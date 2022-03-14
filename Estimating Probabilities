@@ -57,3 +57,7 @@ p_odd_greater_5 = 0 / 6
 
 p_blue = 10 / 100
 p_red = 90 / 100
+
+p_sum_6 = 5/36
+p_lower_15 = 36/36
+p_greater_13 = 0/36
