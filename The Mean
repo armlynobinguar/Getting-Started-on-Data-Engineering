@@ -39,3 +39,17 @@ for i in range(5000):
         one = False # we don't use the symbol mu for the sample mean
 two = False # Should be N = 8, not n = 8
 three = False # x-bar denotes the sample mean, not the population mean
+
+distribution_1 = [42, 24, 32, 11]
+distribution_2 = [102, 32, 74, 15, 38, 45, 22]
+distribution_3 = [3, 12, 7, 2, 15, 1, 21]
+def mean(distribution):
+    sum_distribution = 0
+    for value in distribution:
+        sum_distribution += value
+        
+    return sum_distribution / len(distribution)
+
+mean_1 = mean(distribution_1)
+mean_2 = mean(distribution_2)
+mean_3 = mean(distribution_3)
