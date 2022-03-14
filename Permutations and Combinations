@@ -8,3 +8,9 @@ p_not_five_five = 1-p_five_five
 total_outcomes = 6 * 6 * 6 * 52
 p_666_ace_diamonds = 1 / total_outcomes
 p_no_666_ace_diamonds = 1 - p_666_ace_diamonds
+
+total_outcomes_4_pin = 10**4 # 10 multiplied by itself 4 times
+p_crack_4 = 1 / total_outcomes_4_pin
+
+total_outcomes_6_pin = 10**6 # 10 multiplied by itself 6 times
+p_crack_6 = 1/total_outcomes_6_pin
