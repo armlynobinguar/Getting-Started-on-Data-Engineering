@@ -1,0 +1,14 @@
+distribution = [0,2,3,3,3,4,13]
+mean = sum(distribution) / len(distribution)
+center = False
+
+above = []
+below = []
+
+for value in distribution:
+    if value < mean:
+        below.append(mean - value)
+    if value > mean:
+        above.append(value - mean)
+        
+equal_distances = (sum(above) == sum(below))
