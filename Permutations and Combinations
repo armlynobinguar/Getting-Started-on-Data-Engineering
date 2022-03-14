@@ -4,3 +4,7 @@ p_six_six = 1/n_outcomes
 
 p_five_five = 1/n_outcomes
 p_not_five_five = 1-p_five_five
+
+total_outcomes = 6 * 6 * 6 * 52
+p_666_ace_diamonds = 1 / total_outcomes
+p_no_666_ace_diamonds = 1 - p_666_ace_diamonds
