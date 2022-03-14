@@ -23,3 +23,6 @@ def factorial(n):
 
 permutations_1 = factorial(6) # because there are 6 letters
 permutations_2 = factorial(52)
+perm_3_52 = 52 * 51 * 50
+perm_4_20 = 20 * 19 * 18 * 17
+perm_4_27 = 27 * 26 * 25 * 24
