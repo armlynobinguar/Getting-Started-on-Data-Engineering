@@ -525,3 +525,33 @@ def z_score(value, array, bessel = 0):
 min_z = z_score(min_val, houses['SalePrice'])
 mean_z = z_score(mean_val, houses['SalePrice'])
 max_z = z_score(max_val, houses['SalePrice'])
+
+def z_score(value, array, bessel = 0):
+    mean = sum(array) / len(array)
+    
+    from numpy import std
+    st_dev = std(array, ddof = bessel)
+    
+    distance = value - mean
+    z = distance / st_dev
+    
+    return z
+# Segment the data by location
+north_ames = houses[houses['Neighborhood'] == 'NAmes']
+clg_creek = houses[houses['Neighborhood'] == 'CollgCr']
+old_town = houses[houses['Neighborhood'] == 'OldTown']
+edwards = houses[houses['Neighborhood'] == 'Edwards']
+somerset = houses[houses['Neighborhood'] == 'Somerst']
+
+# Find the z-score for 200000 for every location
+z_by_location = {}
+for data, neighborhood in [(north_ames, 'NAmes'), (clg_creek, 'CollgCr'),
+                     (old_town, 'OldTown'), (edwards, 'Edwards'),
+                     (somerset, 'Somerst')]:
+    
+    z_by_location[neighborhood] = z_score(200000, data['SalePrice'],
+                                          bessel = 0)
+
+# Find the location with the z-score closest to 0
+print(z_by_location)
+best_investment = 'College Creek'
