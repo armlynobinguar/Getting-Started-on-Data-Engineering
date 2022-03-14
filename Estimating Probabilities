@@ -40,3 +40,8 @@ for n in range(1, 10001):
 
 print(probabilities[:10])
 print(probabilities[-10:])
+
+p_l = 87 / 200 
+p_l_and_c = 40 / 200
+p_h = 63 / 200
+p_no = (200-160) / 200
