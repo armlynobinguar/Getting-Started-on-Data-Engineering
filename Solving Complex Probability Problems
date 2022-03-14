@@ -7,3 +7,6 @@ p_non_basic = 1 - 0.2
 p_non_premium = 1 - 0.15
 p_subscription = 0.2 + 0.15
 p_non_subscription = 1 - p_subscription
+
+p_non_b = 7/8
+p_b = 1 - p_non_b
