@@ -83,3 +83,8 @@ print(p_c_d_formula)
 p_f_or_t = 0.26 + 0.11 - 0.03
 
 p_h_and_c = 0.08 + 0.11 - 0.17 # check the hint if you don't understand the answer
+
+operation_1 = False
+operation_2 = True
+operation_3 = False
+operation_4 = True
