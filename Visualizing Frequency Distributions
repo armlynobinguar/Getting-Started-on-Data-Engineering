@@ -56,3 +56,6 @@ plt.show()
 '''The patterns we see are strikingly similar to those we saw for heights. This can be easily
 explained by the fact that there's a strong positive relation between a player's height and her
 weight: the taller the player, the heavier she is; the shorter the player, the lighter she is.'''
+
+sns.boxplot(x = 'Pos', y = 'Weight', data = wnba)
+plt.show()
