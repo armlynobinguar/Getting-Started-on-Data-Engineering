@@ -61,3 +61,13 @@ houses = pd.read_table('AmesHousing_1.txt')
 one = True # every column that describes years is measured on an interval scale
 two = False # `SalePrice` is measured on a ratio scale
 three = True # The data set has less values than the initial one with 3970 rows which we don't know either whether it represents a population
+
+def mean(distribution):
+    sum_distribution = 0
+    for value in distribution:
+        sum_distribution += value
+        
+    return sum_distribution / len(distribution)
+function_mean = mean(houses['SalePrice'])
+pandas_mean = houses['SalePrice'].mean()
+means_are_equal = (function_mean == pandas_mean)
