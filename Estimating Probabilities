@@ -69,3 +69,13 @@ p_12_or_13 = 1/36
 p_5_or_9 = 4/36 + 4/36
 p_even_or_less_2 = 18/36 + 0/36
 p_4_or_3_multiple = 3/36 + 12/36
+
+
+p_c = 3/6
+p_d = 3/6
+
+p_c_d_addition = p_c + p_d
+p_c_d_formula = 4/6
+
+print(p_c_d_addition)
+print(p_c_d_formula)
