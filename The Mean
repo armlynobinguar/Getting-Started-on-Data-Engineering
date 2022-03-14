@@ -287,3 +287,15 @@ for year in houses['Yr Sold'].unique():
     
 one = False
 two = True
+
+C = [1,1,1,1,1,1,1,1,1,21]
+def average_distance(array):
+    reference_point = sum(array) / len(array)
+    
+    distances = []
+    for value in array:
+        distances.append(value - reference_point)
+        
+    return sum(distances) / len(distances)
+
+avg_distance = average_distance(C)
