@@ -504,3 +504,6 @@ plt.axvline(220000, color = 'Orange', label = '220000')
 plt.legend()
 
 very_expensive = False
+
+distance = 220000 - houses['SalePrice'].mean()
+st_devs_away = distance / houses['SalePrice'].std(ddof = 0)
