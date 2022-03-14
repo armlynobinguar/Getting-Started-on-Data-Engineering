@@ -37,3 +37,15 @@ wnba[wnba.Age < 27]['MIN'].plot.hist(histtype = 'step', label = 'Young', legend 
 plt.axvline(497, label = 'Average')
 plt.legend()
 plt.show()
+
+wnba[wnba.Age >= 27]['MIN'].plot.kde(label = 'Old', legend = True)
+wnba[wnba.Age < 27]['MIN'].plot.kde(label = 'Young', legend = True)
+plt.axvline(497, label = 'Average')
+plt.legend()
+plt.show()
+
+'''We can still observe that most of the old players that belong to the "average or above"
+category play significantly more than average. With the help of the vertical line, the pattern
+is very easy to notice. Because the graph looks much cleaner than the one with step-type
+histograms, we can easily argue that the pattern is much more obvious in the case of kernel density
+plots.'''
