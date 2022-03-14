@@ -61,4 +61,19 @@ print(p_big_prize)
 Note the output of p_big_prize ends in e-08
 This means we move eight decimals to the left
 So 7.1e-08 would become 0.000000071
+
 '''
+def factorial(n):
+    final_product = 1
+    for i in range(n, 0, -1):
+        final_product *= i
+    return final_product
+def combinations(n, k):
+    numerator = factorial(n)
+    denominator = factorial(k) * factorial(n-k)
+    return numerator/denominator
+
+c_18 = combinations(34, 18)
+
+p_Y = 1/c_18
+p_non_Y = 1 - p_Y
