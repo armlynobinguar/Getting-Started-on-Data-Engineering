@@ -1,0 +1,6 @@
+n_outcomes = 6*6
+
+p_six_six = 1/n_outcomes
+
+p_five_five = 1/n_outcomes
+p_not_five_five = 1-p_five_five
