@@ -26,3 +26,16 @@ permutations_2 = factorial(52)
 perm_3_52 = 52 * 51 * 50
 perm_4_20 = 20 * 19 * 18 * 17
 perm_4_27 = 27 * 26 * 25 * 24
+
+def factorial(n):
+    final_product = 1
+    for i in range(n, 0, -1):
+        final_product *= i
+    return final_product
+def permutation(n, k):
+    numerator = factorial(n)
+    denominator = factorial(n-k)
+    return numerator/denominator
+
+total_n_outcomes = permutation(127, 16)
+p_crack_pass = 1/total_n_outcomes
