@@ -341,3 +341,26 @@ def standard_deviation(array):
     return sqrt(variance)
 
 standard_deviation_C = standard_deviation(C)
+
+def standard_deviation(array):
+    reference_point = sum(array) / len(array)
+    
+    distances = []
+    for value in array:
+        squared_distance = (value - reference_point)**2
+        distances.append(squared_distance)
+        
+    variance = sum(distances) / len(distances)
+    
+    return sqrt(variance)
+# Measure first the variability for each year
+years = {}
+
+for year in houses['Yr Sold'].unique():
+    year_segment = houses[houses['Yr Sold'] == year]
+    st_dev = standard_deviation(year_segment['SalePrice'])
+    years[year] = st_dev
+
+# Get years of max and min variability
+greatest_variability = max(years, key = years.get) # outputs directly the year with the maximum variability
+lowest_variability = min(years, key = years.get) # outputs directly the year with the minimum variability
