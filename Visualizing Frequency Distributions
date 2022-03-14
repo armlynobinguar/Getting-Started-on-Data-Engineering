@@ -8,3 +8,17 @@ assists_distro = 'right skewed'
 ft_percent_distro = 'left skewed'
 
 normal_distribution = 'Height'
+
+rookies = wnba[wnba['Exp_ordinal'] == 'Rookie']
+little_xp = wnba[wnba['Exp_ordinal'] == 'Little experience']
+experienced = wnba[wnba['Exp_ordinal'] == 'Experienced']
+very_xp = wnba[wnba['Exp_ordinal'] == 'Very experienced']
+veterans =  wnba[wnba['Exp_ordinal'] == 'Veteran']
+rookie_distro = rookies['Pos'].value_counts()
+little_xp_distro = little_xp['Pos'].value_counts()
+experienced_distro = experienced['Pos'].value_counts()
+very_xp_distro = very_xp['Pos'].value_counts()
+veteran_distro = veterans['Pos'].value_counts()
+
+print(rookie_distro, '\n\n', little_xp_distro, '\n\n', experienced_distro, '\n\n',
+      very_xp_distro, '\n\n', veteran_distro)
