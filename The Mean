@@ -573,3 +573,15 @@ houses['z_area'] = houses['Lot Area'].apply(
 
 z_mean_area = houses['z_area'].mean()
 z_stdev_area = houses['z_area'].std(ddof = 0)
+
+from numpy import std, mean
+sample = [0,8,0,8]
+
+x_bar = mean(sample)
+s = std(sample, ddof = 1)
+
+standardized_sample = []
+for value in sample:
+    z = (value - x_bar) / s
+    standardized_sample.append(z)
+stdev_sample = std(standardized_sample, ddof = 1)
