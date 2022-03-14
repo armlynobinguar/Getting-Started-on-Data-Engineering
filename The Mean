@@ -119,3 +119,7 @@ population_mean = sum(population) / len(population)
 mean_of_sample_means = sum(sample_means) / len(sample_means)
 
 unbiased = (population_mean == mean_of_sample_means)
+
+mean_new = houses_per_year['Mean Price'].mean()
+mean_original = houses['SalePrice'].mean()
+difference = mean_original - mean_new
