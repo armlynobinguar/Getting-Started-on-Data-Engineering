@@ -12,3 +12,31 @@ percentage_1 = p_heads_1 * 100
 
 p_heads_2 = (5000-2450) / 5000
 percentage_2 = p_heads_2 * 100
+
+
+# INITIAL CODE
+from numpy.random import seed, randint
+
+seed(1)
+
+def coin_toss():
+    if randint(0,2) == 1:
+        return 'HEAD'
+    else:
+        return 'TAIL'
+    
+probabilities = []
+heads = 0
+
+#for n in range(1, 10001):
+    # Uncomment above and complete code from here
+# SOLUTION CODE
+for n in range(1, 10001):
+    outcome = coin_toss()
+    if outcome == 'HEAD':
+        heads += 1
+    current_probability = heads / n
+    probabilities.append(current_probability)
+
+print(probabilities[:10])
+print(probabilities[-10:])
