@@ -59,3 +59,11 @@ weight: the taller the player, the heavier she is; the shorter the player, the l
 
 sns.boxplot(x = 'Pos', y = 'Weight', data = wnba)
 plt.show()
+iqr = 29 - 22
+lower_bound = 22 - (1.5 * iqr)
+upper_bound = 29 + (1.5 * iqr)
+outliers_low = sum(wnba['Games Played'] < lower_bound) # True values will count as 1 in the summation
+outliers_high = sum(wnba['Games Played'] > upper_bound)
+
+sns.boxplot(wnba['Games Played'])
+plt.show()
