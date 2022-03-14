@@ -14,3 +14,12 @@ p_crack_4 = 1 / total_outcomes_4_pin
 
 total_outcomes_6_pin = 10**6 # 10 multiplied by itself 6 times
 p_crack_6 = 1/total_outcomes_6_pin
+
+def factorial(n):
+    final_product = 1
+    for i in range(n, 0, -1):
+        final_product *= i
+    return final_product
+
+permutations_1 = factorial(6) # because there are 6 letters
+permutations_2 = factorial(52)
