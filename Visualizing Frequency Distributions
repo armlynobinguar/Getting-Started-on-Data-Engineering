@@ -6,3 +6,5 @@ plt.xlabel('Games played')
 
 assists_distro = 'right skewed'
 ft_percent_distro = 'left skewed'
+
+normal_distribution = 'Height'
