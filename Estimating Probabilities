@@ -1,0 +1,7 @@
+p_tail = (100-56) / 100
+p_six = 28 / 200
+p_odd = 102 / 200
+
+print(p_tail)
+print(p_six)
+print(p_odd)
