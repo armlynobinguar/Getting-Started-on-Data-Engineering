@@ -178,3 +178,15 @@ plt.show()
 
 lotarea_difference = houses['Lot Area'].mean() - houses['Lot Area'].median()
 saleprice_difference = houses['SalePrice'].mean() - houses['SalePrice'].median()
+
+mean = houses['Overall Cond'].mean()
+median = houses['Overall Cond'].median()
+
+houses['Overall Cond'].plot.hist()
+more_representative = 'mean' 
+
+'''
+The mean seems more representative and more informative because it captures the
+fact that there are more houses rated above 5 than rated under 5. Because of this,
+the mean is slightly shifted above 5. 
+'''
