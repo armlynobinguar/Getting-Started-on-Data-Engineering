@@ -54,3 +54,6 @@ p_tt = 1 / 4
 p_even = 3 / 6
 p_odd_no_3 = 2 / 6
 p_odd_greater_5 = 0 / 6
+
+p_blue = 10 / 100
+p_red = 90 / 100
