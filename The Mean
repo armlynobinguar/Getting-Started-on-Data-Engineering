@@ -148,3 +148,10 @@ weighted_mean_numpy = average(houses_per_year['Mean Price'],
         weights = houses_per_year['Houses Sold'])
 
 equal = round(weighted_mean_function, 10) == round(weighted_mean_numpy, 10)
+
+distribution1 = [23, 24, 22, '20 years or lower,', 23, 42, 35]
+distribution2 = [55, 38, 123, 40, 71]
+distribution3 = [45, 22, 7, '5 books or lower', 32, 65, '100 books or more']
+median1 = 23
+median2 = 55
+median3 = 32
