@@ -260,3 +260,9 @@ median = houses['SalePrice'].median()
 
 sentence_1 = True
 sentence_2 = True
+distribution_1 = {'mean': 3021 , 'median': 3001, 'mode': 2947}
+distribution_2 = {'median': 924 , 'mode': 832, 'mean': 962}
+distribution_3 = {'mode': 202, 'mean': 143, 'median': 199}
+shape_1 = 'right skew'
+shape_2 = 'right skew'
+shape_3 = 'left skew'
