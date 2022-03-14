@@ -597,3 +597,18 @@ for value in sample:
     z = (value - x_bar) / s
     standardized_sample.append(z)
 stdev_sample = std(standardized_sample, ddof = 1)
+
+mean_index1 = houses['index_1'].mean()
+stdev_index1 = houses['index_1'].std(ddof = 0)
+houses['z_1'] = houses['index_1'].apply(lambda x: 
+                                      (x - mean_index1) / stdev_index1
+                                     )
+
+mean_index2 = houses['index_2'].mean()
+stdev_index2 = houses['index_2'].std(ddof = 0)
+houses['z_2'] = houses['index_2'].apply(lambda x: 
+                                      (x - mean_index2) / stdev_index2
+                                     )
+
+print(houses[['z_1', 'z_2']].head(2))
+better = 'first'
