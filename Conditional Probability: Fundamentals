@@ -83,3 +83,9 @@ p_et_and_ps = p_et * p_ps
 p_et_and_ac = p_et * p_ac
 p_ac_and_ps = p_ac * p_ps
 p_et_and_ac_and_ps = p_et * p_ac * p_ps
+
+p_non_ls = 0.9821
+p_cw_given_ls = 0.0079
+p_l_given_ls_and_cw = 0.2908
+p_ls = 1 - p_non_ls
+p_ls_and_cw_and_l = p_ls * p_cw_given_ls * p_l_given_ls_and_cw
