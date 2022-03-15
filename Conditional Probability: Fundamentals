@@ -89,3 +89,7 @@ p_cw_given_ls = 0.0079
 p_l_given_ls_and_cw = 0.2908
 p_ls = 1 - p_non_ls
 p_ls_and_cw_and_l = p_ls * p_cw_given_ls * p_l_given_ls_and_cw
+
+statement_1 = False
+statement_2 = True
+statement_3 = True
