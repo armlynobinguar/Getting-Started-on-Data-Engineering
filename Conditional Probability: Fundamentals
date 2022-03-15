@@ -50,3 +50,11 @@ p_m_given_non_l = 483/1910
 p_non_l_given_m = 483/515
 p_m_and_non_l = 483/2000
 p_non_l_and_m = 483/2000 #P(M and non-L) is the same as P(non-L and M); see the exercise hint
+
+p_ram = 0.0822
+p_gl = 0.0184
+p_ram_given_gl = 0.0022
+p_gl_and_ram = p_gl * p_ram_given_gl
+p_non_ram_given_gl = 1 - p_ram_given_gl
+p_gl_and_non_ram = p_gl * p_non_ram_given_gl
+p_gl_or_ram = p_gl + p_ram - p_gl_and_ram
