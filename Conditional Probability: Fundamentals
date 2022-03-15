@@ -107,3 +107,11 @@ p_delay_given_boeing = 0.03
 p_delay_given_airbus = 0.08
 
 p_delay = p_boeing*p_delay_given_boeing + p_airbus*p_delay_given_airbus
+
+p_boeing = 0.62
+p_airbus = 0.35
+p_erj = 0.03
+p_delay_boeing = 0.06 
+p_delay_airbus = 0.09
+p_delay_erj = 0.01
+p_delay = p_boeing*p_delay_boeing + p_airbus*p_delay_airbus + p_erj*p_delay_erj
