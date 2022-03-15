@@ -45,3 +45,8 @@ p_non_b_given_m = 1 - p_b_given_m
 p_non_c_given_l = 1 - p_c_given_l
 p_b_given_c = 1 - p_non_b_given_c
 p_b_given_non_m = 'not possible'
+
+p_m_given_non_l = 483/1910
+p_non_l_given_m = 483/515
+p_m_and_non_l = 483/2000
+p_non_l_and_m = 483/2000 #P(M and non-L) is the same as P(non-L and M); see the exercise hint
