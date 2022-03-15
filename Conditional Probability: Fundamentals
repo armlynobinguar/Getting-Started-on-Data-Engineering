@@ -93,3 +93,11 @@ p_ls_and_cw_and_l = p_ls * p_cw_given_ls * p_l_given_ls_and_cw
 statement_1 = False
 statement_2 = True
 statement_3 = True
+
+p_spam = 0.2388
+p_secret_given_spam = 0.4802
+p_secret_given_non_spam = 0.1284
+p_non_spam = 1 - p_spam
+p_spam_and_secret = p_spam * p_secret_given_spam
+p_non_spam_and_secret = p_non_spam * p_secret_given_non_spam
+p_secret = p_spam_and_secret + p_non_spam_and_secret
