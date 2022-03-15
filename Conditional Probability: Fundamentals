@@ -75,3 +75,11 @@ p_l_and_m = p_l * p_m_given_l
 # Exercise 4
 p_not_m_given_l = 58/90
 p_l_and_non_m = p_l * p_not_m_given_l
+
+p_et = 0.0432
+p_ac = 0.0172
+p_ps = 0.0236
+p_et_and_ps = p_et * p_ps
+p_et_and_ac = p_et * p_ac
+p_ac_and_ps = p_ac * p_ps
+p_et_and_ac_and_ps = p_et * p_ac * p_ps
