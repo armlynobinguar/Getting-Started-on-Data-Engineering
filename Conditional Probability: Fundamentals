@@ -25,3 +25,8 @@ patients, only about 2000 will get a correct diagnosis, while the
 other 8000 will not. It looks like the test is almost completely
 inefficient, and it could be dangerous to have it used in hospitals.
 '''
+
+p_premium_given_chrome = 158/2762
+p_basic_given_safari = 274/1288
+p_free_given_firefox = 2103/2285
+more_likely_premium = 'Safari' #because P(Premium | Safari) > P(Premium | Chrome)
