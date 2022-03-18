@@ -2,3 +2,14 @@ males_over50k = .67 * .241 * 32561
 males_under50k = .67 * .759 * 32561
 females_over50k = .33 * .241 * 32561
 females_under50k = .33 * .759 * 32561
+
+observed = [6662, 1179, 15128, 9592]
+expected = [5257.6, 2589.6, 16558.2, 8155.6]
+values = []
+
+for i, obs in enumerate(observed):
+    exp = expected[i]
+    value = (obs - exp) ** 2 / exp
+    values.append(value)
+
+chisq_gender_income = sum(values)
