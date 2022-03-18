@@ -25,3 +25,9 @@ chisq_value, pvalue_gender_income = chisquare(observed, expected)
 import pandas
 table = pandas.crosstab(income["sex"], [income["race"]])
 print(table)
+
+import pandas
+from scipy.stats import chi2_contingency
+
+table = pandas.crosstab(income["sex"], [income["race"]])
+chisq_value, pvalue_gender_race, df, expected = chi2_contingency(table)
