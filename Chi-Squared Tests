@@ -1,3 +1,7 @@
 
 female_diff = (10771 - 16280.5) / 16280.5
 male_diff = (21790 - 16280.5) / 16280.5
+
+female_diff = (10771 - 16280.5) ** 2 / 16280.5
+male_diff = (21790 - 16280.5) ** 2 / 16280.5
+gender_chisq = female_diff + male_diff
