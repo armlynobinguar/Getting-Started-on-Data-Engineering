@@ -36,3 +36,9 @@ for df in mean_differences:
         sampling_distribution[df] = sampling_distribution[df] + 1
     else:
         sampling_distribution[df] = 1
+
+frequencies = []
+for sp in sampling_distribution.keys():
+    if sp >= 2.52:
+        frequencies.append(sampling_distribution[sp])
+p_value = np.sum(frequencies) / 1000
