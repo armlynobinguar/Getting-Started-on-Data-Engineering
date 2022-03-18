@@ -1,0 +1,4 @@
+males_over50k = .67 * .241 * 32561
+males_under50k = .67 * .759 * 32561
+females_over50k = .33 * .241 * 32561
+females_under50k = .33 * .759 * 32561
