@@ -22,3 +22,7 @@ for i in range(1000):
     chi_squared_values.append(chi_squared)
 
 plt.hist(chi_squared_values)
+
+female_diff = (107.71 - 162.805) ** 2 / 162.805
+male_diff = (217.90 - 162.805) ** 2 / 162.805
+gender_chisq = female_diff + male_diff
