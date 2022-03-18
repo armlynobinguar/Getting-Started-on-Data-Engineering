@@ -29,3 +29,10 @@ for i in range(1000):
     
 plt.hist(mean_differences)
 plt.show()
+
+sampling_distribution = {}
+for df in mean_differences:
+    if sampling_distribution.get(df, False):
+        sampling_distribution[df] = sampling_distribution[df] + 1
+    else:
+        sampling_distribution[df] = 1
