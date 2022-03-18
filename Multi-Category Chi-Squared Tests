@@ -13,3 +13,11 @@ for i, obs in enumerate(observed):
     values.append(value)
 
 chisq_gender_income = sum(values)
+
+import numpy as np
+from scipy.stats import chisquare
+
+observed = np.array([6662, 1179, 15128, 9592])
+expected = np.array([5257.6, 2589.6, 16558.2, 8155.6])
+
+chisq_value, pvalue_gender_income = chisquare(observed, expected)
