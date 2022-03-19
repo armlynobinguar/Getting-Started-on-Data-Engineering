@@ -12,3 +12,18 @@ def categorize(score):
     elif score in (9,10):
         return "Promoter"
     return None
+
+
+import pandas as pd
+
+df = pd.read_csv("nps.csv", parse_dates=["event_date"])
+year = df["event_date"].dt.year
+month = df["event_date"].dt.month
+df["yearmonth"] = 100*year + month
+
+df["category"] = df["score"].apply(categorize)
+
+nps = df.pivot_table(index="yearmonth", columns="category", aggfunc="size")
+nps["total_responses"] = nps.sum(axis="columns")
+nps["nps"] = (nps["Promoter"]-nps["Detractor"])/nps["total_responses"]
+nps["nps"] = (100*nps["nps"]).astype(int)
