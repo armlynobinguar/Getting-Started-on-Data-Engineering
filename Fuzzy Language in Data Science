@@ -21,3 +21,7 @@ cutoff_day = dt.datetime(2019, 10, 16)
 best_churn["churned"] = best_churn["trans_date"].apply(
     lambda date: 1 if date < cutoff_day else 0
 )
+
+best_churn["nr_of_transactions"] = group_by_customer.size()
+best_churn["amount_spent"] = group_by_customer.sum()
+best_churn.drop("trans_date", axis="columns", inplace=True)
