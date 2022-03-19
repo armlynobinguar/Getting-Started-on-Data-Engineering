@@ -25,3 +25,13 @@ paid.sort_values("Reviews", ascending=False, inplace=True)
 paid.drop_duplicates("App", inplace=True)
 print(paid.duplicated("App").sum())
 paid.reset_index(inplace=True, drop=True)
+
+affordable_apps = paid[paid["Price"]<50].copy()
+cheap = affordable_apps["Price"] < 5
+reasonable = affordable_apps["Price"] >= 5
+affordable_apps[cheap].hist(column="Price", grid=False, figsize=(12,6))
+affordable_apps[reasonable].hist(column="Price", grid=False, figsize=(12,6))
+affordable_apps["affordability"] = affordable_apps.apply(
+    lambda row: "cheap" if row["Price"] < 5 else "reasonable",
+    axis=1
+)
