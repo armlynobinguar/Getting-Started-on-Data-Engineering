@@ -96,3 +96,20 @@ def label_categories(row):
 affordable_apps["category_criterion"] = affordable_apps.apply(
     label_categories, axis="columns"
 )
+
+criteria = ["price_criterion", "genre_criterion", "category_criterion"]
+affordable_apps["Result"] = affordable_apps[criteria].mode(axis='columns')
+def new_price(row):
+    if row["affordability"] == "cheap":
+        return round(max(row["Price"], cheap_mean), 2)
+    else:
+        return round(max(row["Price"], reasonable_mean), 2)
+    
+affordable_apps["New Price"] = affordable_apps.apply(new_price, axis="columns")
+
+affordable_apps["Installs"] = affordable_apps["Installs"].str.replace("[+,]", "").astype(int)
+
+affordable_apps["Impact"] = (affordable_apps["New Price"]-affordable_apps["Price"])*affordable_apps["Installs"]
+
+total_impact = affordable_apps["Impact"].sum()
+print(total_impact)
