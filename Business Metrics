@@ -27,3 +27,8 @@ nps = df.pivot_table(index="yearmonth", columns="category", aggfunc="size")
 nps["total_responses"] = nps.sum(axis="columns")
 nps["nps"] = (nps["Promoter"]-nps["Detractor"])/nps["total_responses"]
 nps["nps"] = (100*nps["nps"]).astype(int)
+
+import pandas as pd
+subs = pd.read_csv("muscle_labs.csv", parse_dates=["end_date", "start_date"])
+subs["churn_month"] = subs["end_date"].dt.year*100 + subs["end_date"].dt.month
+monthly_churn = pd.DataFrame({"total_churned": subs.groupby("churn_month").size()})
