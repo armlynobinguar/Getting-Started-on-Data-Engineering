@@ -43,3 +43,7 @@ best_churn.sort_values("score", inplace=True, ascending=False)
 
 coupon = data["tran_amount"].mean()*0.3
 nr_of_customers = 1000/coupon
+
+top_50_churned = best_churn.loc[best_churn["churned"] == 1].head(50)
+
+top_50_churned.to_csv("best_customers.txt")
