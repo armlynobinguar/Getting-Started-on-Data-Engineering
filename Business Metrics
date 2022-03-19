@@ -32,3 +32,13 @@ import pandas as pd
 subs = pd.read_csv("muscle_labs.csv", parse_dates=["end_date", "start_date"])
 subs["churn_month"] = subs["end_date"].dt.year*100 + subs["end_date"].dt.month
 monthly_churn = pd.DataFrame({"total_churned": subs.groupby("churn_month").size()})
+
+years = list(range(2011,2015))
+months = list(range(1,13))
+yearmonths = [y*100+m for y in years for m in months]
+yearmonths = yearmonths[:-1]
+
+churn = pd.DataFrame({"yearmonth": yearmonths})
+churn = pd.merge(churn, monthly_churn, "left", left_on="yearmonth", right_index=True)
+churn.fillna(0, inplace=True)
+churn["total_churned"] = churn["total_churned"].astype(int)
