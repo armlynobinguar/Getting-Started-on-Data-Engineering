@@ -40,3 +40,6 @@ best_churn["score"] = 100*(.5*best_churn["scaled_tran"] \
                            + .5*best_churn["scaled_amount"])
 
 best_churn.sort_values("score", inplace=True, ascending=False)
+
+coupon = data["tran_amount"].mean()*0.3
+nr_of_customers = 1000/coupon
