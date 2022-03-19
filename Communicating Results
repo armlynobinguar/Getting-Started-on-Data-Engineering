@@ -35,3 +35,19 @@ affordable_apps["affordability"] = affordable_apps.apply(
     lambda row: "cheap" if row["Price"] < 5 else "reasonable",
     axis=1
 )
+
+cheap = affordable_apps["Price"] < 5
+reasonable = affordable_apps["Price"] >= 5
+cheap_mean = affordable_apps.loc[cheap, "Price"].mean()
+
+affordable_apps.loc[cheap, "price_criterion"] = affordable_apps["Price"].apply(
+    lambda price: 1 if price < cheap_mean else 0
+)
+
+affordable_apps[reasonable].plot(kind="scatter", x="Price", y="Rating")
+
+reasonable_mean = affordable_apps.loc[reasonable, "Price"].mean()
+
+affordable_apps.loc[reasonable,"price_criterion"] = affordable_apps["Price"].apply(
+    lambda price: 1 if price < reasonable_mean else 0
+)
