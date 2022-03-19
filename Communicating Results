@@ -20,3 +20,8 @@ paid.drop("Type", axis="columns", inplace=True)
 paid["Reviews"] = paid["Reviews"].astype(int)
 paid["Size"] = paid["Size"].apply(clean_size).astype(float)
 paid.info()
+
+paid.sort_values("Reviews", ascending=False, inplace=True)
+paid.drop_duplicates("App", inplace=True)
+print(paid.duplicated("App").sum())
+paid.reset_index(inplace=True, drop=True)
