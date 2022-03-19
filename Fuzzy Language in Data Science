@@ -7,3 +7,17 @@ ans = "C"
 # ans = "B"
 # ans = "C"
 ans = "A"
+
+import pandas as pd
+import datetime as dt
+
+data = pd.read_csv("rfm_xmas19.txt", parse_dates=["trans_date"])
+group_by_customer = data.groupby("customer_id")
+last_transaction = group_by_customer["trans_date"].max()
+best_churn = pd.DataFrame(last_transaction)
+
+cutoff_day = dt.datetime(2019, 10, 16)
+
+best_churn["churned"] = best_churn["trans_date"].apply(
+    lambda date: 1 if date < cutoff_day else 0
+)
