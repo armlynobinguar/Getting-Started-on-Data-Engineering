@@ -42,3 +42,49 @@ churn = pd.DataFrame({"yearmonth": yearmonths})
 churn = pd.merge(churn, monthly_churn, "left", left_on="yearmonth", right_index=True)
 churn.fillna(0, inplace=True)
 churn["total_churned"] = churn["total_churned"].astype(int)
+
+import datetime as dt
+
+# arange = __import__("numpy").arange
+# Ellipse = __import__("matplotlib").patches.Ellipse
+# ax = churn.plot(x="yearmonth", y="churn_rate", figsize=(12,6), rot=45, marker=".")
+# start, end = ax.get_xlim()
+# ax.get_xticks()
+# ax.set_xticks(arange(2, end, 3))
+# ax.set_xticklabels(yearmonths[2::3])
+# circle = Ellipse((35, churn.loc[churn.yearmonth == "201312", "churn_rate"].iloc[0]),
+#                  5, 0.065, color='sandybrown', fill=False
+#                    )
+# ax.add_artist(circle)
+# ax.xaxis.label.set_visible(False)
+# ax.spines['top'].set_visible(False)
+# ax.spines['right'].set_visible(False)
+# ax.get_legend().remove()
+import datetime as dt
+
+def get_customers(yearmonth):
+    year = yearmonth//100
+    month = yearmonth-year*100
+    date = dt.datetime(year, month, 1)
+    
+    return ((subs["start_date"] < date) & (date <= subs["end_date"])).sum()
+
+churn["total_customers"] = churn["yearmonth"].apply(get_customers)
+churn["churn_rate"] = churn["total_churned"] / churn["total_customers"]
+churn["yearmonth"] = churn["yearmonth"].astype(str)
+
+arange = __import__("numpy").arange
+Ellipse = __import__("matplotlib").patches.Ellipse
+ax = churn.plot(x="yearmonth", y="churn_rate", figsize=(12,6), rot=45, marker=".")
+start, end = ax.get_xlim()
+ax.get_xticks()
+ax.set_xticks(arange(2, end, 3))
+ax.set_xticklabels(yearmonths[2::3])
+circle = Ellipse((35, churn.loc[churn.yearmonth == "201312", "churn_rate"].iloc[0]),
+                 5, 0.065, color='sandybrown', fill=False
+                   )
+ax.add_artist(circle)
+ax.xaxis.label.set_visible(False)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.get_legend().remove()
