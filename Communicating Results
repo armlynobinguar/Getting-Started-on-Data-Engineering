@@ -1,0 +1,7 @@
+import pandas as pd
+
+playstore = pd.read_csv("googleplaystore.csv")
+print(playstore.shape)
+answer="no" # We don't care about free apps for this project
+
+playstore.drop(labels=10472, inplace=True)
