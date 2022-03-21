@@ -159,3 +159,30 @@ ADD COLUMN active NUMERIC;
 ALTER TABLE wishlist_track
 ADD COLUMN active NUMERIC;
 EOF
+
+# +--------------------------------+
+# |                                |
+# |     RUN THE COMMANDS BELOW     |
+# |                                |
+# +--------------------------------+
+#
+# /home/dq$ sqlite3 chinook.db
+#  sqlite3> UPDATE wishlist
+#      ...> SET active = 1;
+#  sqlite3> UPDATE wishlist_track
+#      ...> SET active = 1;
+#  sqlite3> .quit
+#
+#
+# +--------------------------------+
+# |                                |
+# |     👇 does the same as ☝️     |
+# |                                |
+# +--------------------------------+
+
+sqlite3 chinook.db <<EOF
+UPDATE wishlist
+SET active = 1;
+UPDATE wishlist_track
+SET active = 1;
+EOF
