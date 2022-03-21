@@ -19,3 +19,6 @@ cursor = conn.cursor()
 query = "select Major,Major_category from recent_grads;"
 cursor.execute(query)
 five_results = cursor.fetchmany(5)
+
+conn = sqlite3.connect("jobs.db")
+conn.close()
