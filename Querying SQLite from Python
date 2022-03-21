@@ -12,3 +12,10 @@ print(results[0:2])
 query = "select major from recent_grads;"
 majors = cursor.execute(query).fetchall()
 print(majors[0:3])
+
+import sqlite3
+conn = sqlite3.connect("jobs.db")
+cursor = conn.cursor()
+query = "select Major,Major_category from recent_grads;"
+cursor.execute(query)
+five_results = cursor.fetchmany(5)
