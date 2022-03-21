@@ -27,3 +27,34 @@ CREATE TABLE user (
     last_name TEXT
 );
 EOF
+
+# +--------------------------------+
+# |                                |
+# |     RUN THE COMMANDS BELOW     |
+# |                                |
+# +--------------------------------+
+#
+# /home/dq$ sqlite3 chinook.db
+#  sqlite3> CREATE TABLE wishlist (
+#      ...> wishlist_id INTEGER PRIMARY KEY,
+#      ...> customer_id INTEGER,
+#      ...> name TEXT,
+#      ...> FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
+#      ...> );
+#  sqlite3> .quit
+#
+#
+# +--------------------------------+
+# |                                |
+# |     👇 does the same as ☝️     |
+# |                                |
+# +--------------------------------+
+
+sqlite3 chinook.db <<EOF
+CREATE TABLE wishlist (
+    wishlist_id INTEGER PRIMARY KEY,
+    customer_id INTEGER,
+    name TEXT,
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
+);
+EOF
