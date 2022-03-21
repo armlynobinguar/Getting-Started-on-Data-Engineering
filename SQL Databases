@@ -186,3 +186,38 @@ SET active = 1;
 UPDATE wishlist_track
 SET active = 1;
 EOF
+
+# +--------------------------------+
+# |                                |
+# |     RUN THE COMMANDS BELOW     |
+# |                                |
+# +--------------------------------+
+#
+# /home/dq$ sqlite3 chinook.db
+#  sqlite3> ALTER TABLE invoice
+#      ...> ADD COLUMN tax NUMERIC;
+#  sqlite3> ALTER TABLE invoice
+#      ...> ADD COLUMN subtotal NUMERIC;
+#  sqlite3> UPDATE invoice
+#      ...> SET
+#      ...>     tax = 0,
+#      ...>     subtotal = total;
+#  sqlite3> .quit
+#
+#
+# +--------------------------------+
+# |                                |
+# |     👇 does the same as ☝️     |
+# |                                |
+# +--------------------------------+
+
+sqlite3 chinook.db <<EOF
+ALTER TABLE invoice
+ADD COLUMN tax NUMERIC;
+ALTER TABLE invoice
+ADD COLUMN subtotal NUMERIC;
+UPDATE invoice
+SET
+    tax = 0,
+    subtotal = total;
+EOF
