@@ -132,3 +132,30 @@ VALUES
     (2, 3272),
     (2, 3470);
 EOF
+
+# +--------------------------------+
+# |                                |
+# |     RUN THE COMMANDS BELOW     |
+# |                                |
+# +--------------------------------+
+#
+# /home/dq$ sqlite3 chinook.db
+#  sqlite3> ALTER TABLE wishlist
+#      ...> ADD COLUMN active NUMERIC;
+#  sqlite3> ALTER TABLE wishlist_track
+#      ...> ADD COLUMN active NUMERIC;
+#  sqlite3> .quit
+#
+#
+# +--------------------------------+
+# |                                |
+# |     👇 does the same as ☝️     |
+# |                                |
+# +--------------------------------+
+
+sqlite3 chinook.db <<EOF
+ALTER TABLE wishlist
+ADD COLUMN active NUMERIC;
+ALTER TABLE wishlist_track
+ADD COLUMN active NUMERIC;
+EOF
