@@ -1,0 +1,29 @@
+# +--------------------------------+
+# |                                |
+# |     RUN THE COMMANDS BELOW     |
+# |                                |
+# +--------------------------------+
+#
+# /home/dq$ sqlite3 new_database.db
+#  sqlite3> CREATE TABLE user (
+#      ...> user_id INTEGER,
+#      ...> first_name TEXT,
+#      ...> last_name TEXT
+#      ...> );
+#  sqlite3> .schema user
+#  sqlite3> .quit
+#
+#
+# +--------------------------------+
+# |                                |
+# |     👇 does the same as ☝️     |
+# |                                |
+# +--------------------------------+
+
+sqlite3 new_database.db <<EOF
+CREATE TABLE user (
+    user_id INTEGER,
+    first_name TEXT,
+    last_name TEXT
+);
+EOF
