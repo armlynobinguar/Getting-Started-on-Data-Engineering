@@ -58,3 +58,36 @@ CREATE TABLE wishlist (
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
 );
 EOF
+
+# +--------------------------------+
+# |                                |
+# |     RUN THE COMMANDS BELOW     |
+# |                                |
+# +--------------------------------+
+#
+# /home/dq$ sqlite3 chinook.db
+#  sqlite3> CREATE TABLE wishlist_track (
+#      ...> wishlist_id INTEGER,
+#      ...> track_id INTEGER,
+#      ...> PRIMARY KEY (wishlist_id, track_id),
+#      ...> FOREIGN KEY (wishlist_id) REFERENCES wishlist(wishlist_id),
+#      ...> FOREIGN KEY (track_id) REFERENCES track(track_id)
+#      ...> );
+#  sqlite3> .quit
+#
+#
+# +--------------------------------+
+# |                                |
+# |     👇 does the same as ☝️     |
+# |                                |
+# +--------------------------------+
+
+sqlite3 chinook.db <<EOF
+CREATE TABLE wishlist_track (
+    wishlist_id INTEGER,
+    track_id INTEGER,
+    PRIMARY KEY (wishlist_id, track_id),
+    FOREIGN KEY (wishlist_id) REFERENCES wishlist(wishlist_id),
+    FOREIGN KEY (track_id) REFERENCES track(track_id)
+);
+EOF
