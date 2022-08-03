@@ -179,3 +179,11 @@ from sqlalchemy import select, func
 stmt = select([func.sum(census.columns.pop2000 * census.columns.age) 
   					/ func.sum(census.columns.pop2000)
 			  ])
+			  
+			  # Import select and func
+from sqlalchemy import select, func
+
+# Relabel the new column as average_age
+stmt = select([(func.sum(census.columns.pop2000 * census.columns.age) 
+  					/ func.sum(census.columns.pop2000)).label('average_age')
+			  ])
