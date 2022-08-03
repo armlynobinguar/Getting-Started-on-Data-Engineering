@@ -159,3 +159,15 @@ for row in csv_reader:
     # Append the dictionary to the values list
     values_list.append(data)
 
+
+# Import insert
+from sqlalchemy import insert
+
+# Build insert statement: stmt
+stmt = insert(census)
+
+# Use values_list to insert data: results
+results = connection.execute(stmt, values_list)
+
+# Print rowcount
+print(results.rowcount)
