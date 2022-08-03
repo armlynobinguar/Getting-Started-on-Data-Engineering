@@ -187,3 +187,15 @@ from sqlalchemy import select, func
 stmt = select([(func.sum(census.columns.pop2000 * census.columns.age) 
   					/ func.sum(census.columns.pop2000)).label('average_age')
 			  ])
+
+# Import select and func
+from sqlalchemy import select, func
+
+# Add the sex column to the select statement
+stmt = select([census.columns.sex,
+  			   (func.sum(census.columns.pop2000 * census.columns.age) 
+  					/ func.sum(census.columns.pop2000)).label('average_age')               
+			  ])
+
+# Group by sex
+stmt = stmt.group_by(census.columns.sex)
