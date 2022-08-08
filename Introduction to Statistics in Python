@@ -148,3 +148,9 @@ from scipy.stats import poisson
 prob_over_10 = 1 - poisson.cdf(10, 4)
 
 print(prob_over_10)
+
+# Import expon from scipy.stats
+from scipy.stats import expon
+
+# Print probability response takes < 1 hour
+print(expon.cdf(1, scale=2.5))
