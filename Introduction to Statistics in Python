@@ -50,3 +50,12 @@ plt.show()
 # Create a histogram of num_users and show
 amir_deals['num_users'].hist()
 plt.show()
+
+# Set seed to 104
+np.random.seed(104)
+
+# Sample 20 num_users with replacement from amir_deals
+samp_20 = amir_deals['num_users'].sample(20, replace=True)
+
+# Take mean of samp_20
+print(np.mean(samp_20))
