@@ -166,3 +166,9 @@ from scipy.stats import expon
 
 # Print probability response takes 3-4 hours
 print(expon.cdf(4, scale=2.5) - expon.cdf(3, scale=2.5))
+
+# Create a scatterplot of happiness_score vs. life_exp and show
+sns.scatterplot(x='life_exp', y='happiness_score', data=world_happiness)
+
+# Show plot
+plt.show()
