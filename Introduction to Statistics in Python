@@ -140,3 +140,11 @@ from scipy.stats import poisson
 prob_2_or_less = poisson.cdf(2, 4)
 
 print(prob_2_or_less)
+
+# Import poisson from scipy.stats
+from scipy.stats import poisson
+
+# Probability of > 10 responses
+prob_over_10 = 1 - poisson.cdf(10, 4)
+
+print(prob_over_10)
