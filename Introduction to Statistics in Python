@@ -46,3 +46,7 @@ new_sales = norm.rvs(new_mean, new_sd, size=36)
 # Create histogram and show
 plt.hist(new_sales)
 plt.show()
+
+# Create a histogram of num_users and show
+amir_deals['num_users'].hist()
+plt.show()
