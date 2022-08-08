@@ -9,3 +9,7 @@ print(won_25pct)
 # Expected number won with 35% win rate
 won_35pct = 3 * 0.35
 print(won_35pct)
+
+# Histogram of amount with 10 bins and show plot
+amir_deals['amount'].hist(bins=10)
+plt.show()
