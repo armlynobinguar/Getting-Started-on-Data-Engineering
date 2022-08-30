@@ -322,3 +322,16 @@ error = False
 dice1 = np.array([i for i in range(1, 7)])
 dice2 = dice1.reshape((6, 1))
 dice_sums = dice1 + dice2
+
+import numpy as np
+x = np.array([
+    [44, 70, 49,  2, 19],
+    [62, 68, 64, 18, 12],
+    [91, 90, 63, 98, 69],
+    [22,  9, 98, 16, 58],
+    [47, 92, 39,  8, 19],
+    [ 1, 41,  3, 15, 71],
+    [92, 18, 37, 42,  5]
+])
+first_four = x[:4,:]
+last_column = x[:,-1]
