@@ -51,3 +51,10 @@ array2d = np.array([
 x = array2d[:,3:] # Get all rows, get cols starting at col 3
 y = array2d[::2,:] # Get all even rows, get all cols
 z = array2d[::2,::2] # Get all even rows, get all even cols
+
+array2d = np.array([
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+])
