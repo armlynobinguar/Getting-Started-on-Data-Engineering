@@ -272,3 +272,11 @@ x = np.array([
 ])
 y = np.array([1, 2, 3, 4])
 z = x + y
+
+x = np.array([
+    [1],
+    [2],
+    [3]
+])
+y = np.array([1, 2, 3])
+z = x + y
