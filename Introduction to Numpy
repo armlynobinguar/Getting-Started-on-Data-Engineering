@@ -386,3 +386,6 @@ equal_cases = female == male
 num_more_female = more_female_cases.sum()
 num_equal = equal_cases.sum()
 num_more_male = len(sars) - num_more_female - num_equal
+
+any_less_1 = (sars[:,-1] < 1).any()
+all_less_50 = (sars[:,-1] < 50).all()
