@@ -29,3 +29,9 @@ print(x, y, z)
 
 y[1] = 7
 print(x, y, z)
+
+x = np.array([9, 1, 5, 6, 2, 0, 4, 3, 8, 7])
+second_to_last = x[-2]
+reversed_x = x[::-1]
+first_5_reversed = x[4::-1]
+last_5_reversed = x[:4:-1]
