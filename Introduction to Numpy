@@ -291,3 +291,30 @@ dice2 = np.array([
     [6]
 ])
 dice_sums = dice1 + dice2
+
+x = np.array([1, 2, 3, 4])
+y = np.array([
+    [1], 
+    [2], 
+    [3], 
+    [4]
+])
+shape_x = x.shape
+shape_y = y.shape
+print(shape_x, shape_y)
+
+# Step 1.
+# Add 1's to the left of shape of x until it becomes 2-dimensional
+shape_x_step1 = (1, 4)
+shape_y_step1 = (4, 1)
+
+# Step 2.
+# We got a 1 and a 4 in the first position. Make the 1 into a 4.
+shape_x_step2 = (4, 4)
+
+# We got a 1 and a 4 in the second position. Make the 1 into a 4.
+shape_y_step2 = (4, 4)
+
+# Step 3.
+# Both have the same shape, so they can be added.
+error = False
