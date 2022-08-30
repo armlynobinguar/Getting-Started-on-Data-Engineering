@@ -13,3 +13,9 @@ x = np.array([9, 1, 5, 6, 2, 0, 4, 3, 8, 7])
 first_half = x[0:5]
 last_8 = x[2:]
 middle = x[1:9]
+
+x = np.array([9, 1, 5, 6, 2, 0, 4, 3, 8, 7])
+even = x[::2]
+odd = x[1::2]
+mul_3 = x[::3]
+every_2 = x[3:9:2]
