@@ -19,3 +19,13 @@ even = x[::2]
 odd = x[1::2]
 mul_3 = x[::3]
 every_2 = x[3:9:2]
+
+x = np.array([1, 0, 0, 0, 1])
+y = x[1:4]
+z = y.copy()
+
+z[0] = 9
+print(x, y, z)
+
+y[1] = 7
+print(x, y, z)
