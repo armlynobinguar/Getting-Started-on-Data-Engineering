@@ -389,3 +389,11 @@ num_more_male = len(sars) - num_more_female - num_equal
 
 any_less_1 = (sars[:,-1] < 1).any()
 all_less_50 = (sars[:,-1] < 50).all()
+
+deaths = sars[:,3]
+fatality_ratio = sars[:,4]
+death_gt_100_ratio_lt_10 = (deaths >= 100) & (fatality_ratio <= 10)
+count = death_gt_100_ratio_lt_10.sum()deaths = sars[:,3]
+fatality_ratio = sars[:,4]
+death_gt_100_ratio_lt_10 = (deaths >= 100) & (fatality_ratio <= 10)
+count = death_gt_100_ratio_lt_10.sum()
