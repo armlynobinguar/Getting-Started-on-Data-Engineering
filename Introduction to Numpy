@@ -119,3 +119,32 @@ def add_list_values(list1, list2):
     for i in range(N):
         result.append(list1[i] + list2[i])
     return result
+    
+    import time
+import random
+random.seed(0)
+
+# Generate test lists
+list1 = [random.randint(0, 1000) for _ in range(100000)]
+list2 = [random.randint(0, 1000) for _ in range(100000)]
+
+# Measure the execution time of adding lists
+start = time.time()
+add_list_values(list1, list2)
+end = time.time()
+time_list = end - start
+
+# Write your code below
+# Create ndarrays from the lists
+x1 = np.array(list1)
+x2 = np.array(list2)
+
+# Measure the execution time of adding ndarrays
+start = time.time()
+x3 = x1 + x2
+end = time.time()
+time_array = end - start
+
+# Compute the execution time ratio
+ratio = time_list / time_array
+print(ratio)
