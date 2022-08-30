@@ -375,3 +375,6 @@ np.set_printoptions(suppress=True)
 sars = sars[1:,:]
 sars = sars[:,1:]
 print(sars[:5,:])
+
+total = sars[:,2]
+max_cases = total.max()
