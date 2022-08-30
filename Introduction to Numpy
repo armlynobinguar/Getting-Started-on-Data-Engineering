@@ -369,4 +369,9 @@ first_five = sars[:5,:]
 # Alternative answer
 sars = np.genfromtxt('sars.csv', delimiter=',')
 first_five = sars[:5]
-print(first_five)
+print(first_five)https://github.com/armlynobinguar/Getting-Started-on-Data-Engineering/fork
+
+np.set_printoptions(suppress=True)
+sars = sars[1:,:]
+sars = sars[:,1:]
+print(sars[:5,:])
