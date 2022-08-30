@@ -401,3 +401,7 @@ count = death_gt_100_ratio_lt_10.sum()
 mask = fatality_ratio >= 10
 num_deaths = deaths[mask]
 print(num_deaths)
+
+mask_zeros = sars == 0
+zeros = sars[mask_zeros]
+num_zeros = len(zeros)
