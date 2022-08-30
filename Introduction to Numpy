@@ -361,3 +361,12 @@ x = np.array([
 ])
 first_four = x[:4,:]
 last_column = x[:,-1]
+
+import numpy as np
+sars = np.genfromtxt('sars.csv', delimiter=',')
+first_five = sars[:5,:]
+
+# Alternative answer
+sars = np.genfromtxt('sars.csv', delimiter=',')
+first_five = sars[:5]
+print(first_five)
