@@ -165,3 +165,20 @@ people_data = np.array([
 w = people_data[:,1]
 h = people_data[:,2]
 BMI = w / (h * h)
+
+scores = np.array([
+    [46, 74, 52, 81],
+    [75, 45, 67, 53],
+    [67, 80, 73, 63],
+    [59, 94, 43, 78]
+])
+scores_day1 = scores[:,0:2]
+scores_day2 = scores[:,2:4]
+
+shape1 = scores_day1.shape
+shape2 = scores_day2.shape
+print(shape1, shape2)
+
+total_scores = scores_day1 + scores_day2
+
+print(total_scores)
