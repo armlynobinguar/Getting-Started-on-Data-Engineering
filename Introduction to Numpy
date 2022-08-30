@@ -212,3 +212,14 @@ max_game1 = scores_game1.max()
 
 min_game2 = scores_game2.min()
 max_game2 = scores_game2.max()
+
+total_scores = np.array([
+ [ 98, 155],
+ [142,  98],
+ [140, 143],
+ [102, 172]
+])
+max_game_scores = total_scores.max(axis=0)
+min_game_scores = total_scores.min(axis=0)
+max_people_scores = total_scores.max(axis=1)
+min_people_scores = total_scores.min(axis=1)
