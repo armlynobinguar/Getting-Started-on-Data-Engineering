@@ -148,3 +148,10 @@ time_array = end - start
 # Compute the execution time ratio
 ratio = time_list / time_array
 print(ratio)
+
+people_data = np.array([
+    [27, 67, 1.65],
+    [35, 81, 1.84],
+    [29, 55, 1.60],
+    [41, 73, 1.79]
+])
