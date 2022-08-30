@@ -280,3 +280,14 @@ x = np.array([
 ])
 y = np.array([1, 2, 3])
 z = x + y
+
+dice1 = np.array([1, 2, 3, 4, 5, 6])
+dice2 = np.array([
+    [1],
+    [2],
+    [3],
+    [4],
+    [5],
+    [6]
+])
+dice_sums = dice1 + dice2
