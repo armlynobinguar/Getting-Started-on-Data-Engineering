@@ -35,3 +35,10 @@ second_to_last = x[-2]
 reversed_x = x[::-1]
 first_5_reversed = x[4::-1]
 last_5_reversed = x[:4:-1]
+
+my_2d_array = np.array([
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 6, 9]
+])
+my_2d_array[1, 1] = 42
