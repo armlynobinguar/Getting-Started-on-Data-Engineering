@@ -68,3 +68,14 @@ array2d = np.array([
 array2d[:,0:2] = 1
 array2d[2:,:] = 2
 array2d[0:3,1:4] = 3
+
+people_data = np.array([
+    [27, 67, 1.65],
+    [35, 81, 1.84],
+    [29, 55, 1.60],
+    [41, 73, 1.79]
+])
+anna_row = people_data[2,:]
+bob_age_height = people_data[3,::2]
+ages_col = people_data[:,0]
+weight_dexter_bob = people_data[1::2,1]
