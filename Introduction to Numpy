@@ -79,3 +79,20 @@ anna_row = people_data[2,:]
 bob_age_height = people_data[3,::2]
 ages_col = people_data[:,0]
 weight_dexter_bob = people_data[1::2,1]
+
+
+import numpy as np
+table = np.array([
+    [ 1,  2,  3,  4,  5],
+    [ 6,  7,  8,  9, 10],
+    [11, 12, 13, 14, 15],
+    [16, 17, 18, 19, 20]
+])
+col = table[0:4,1]
+row = table[2,0:5]
+center = table[1:3,1:4]
+
+# Alternative answer (using default values)
+col = table[:,1]
+row = table[2,:]
+center = table[1:-1,1:-1]
