@@ -318,3 +318,7 @@ shape_y_step2 = (4, 4)
 # Step 3.
 # Both have the same shape, so they can be added.
 error = False
+
+dice1 = np.array([i for i in range(1, 7)])
+dice2 = dice1.reshape((6, 1))
+dice_sums = dice1 + dice2
