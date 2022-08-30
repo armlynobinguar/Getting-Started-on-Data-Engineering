@@ -250,3 +250,7 @@ x = np.array([
 ])
 ones = np.ones(x.shape)
 x -= ones
+
+
+x = np.array([3, 2, 4, 5])
+r = 1 / x
