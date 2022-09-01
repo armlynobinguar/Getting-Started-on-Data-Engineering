@@ -449,3 +449,7 @@ print(x)
 
 value_list = [-127, -57, -6, 0, 9, 42, 125]
 value_array = np.array(value_list, dtype=np.int8)
+
+x = np.array([-127, -57, -6, 0, 9, 42, 125], dtype=np.int8)
+print(x - 2)
+print(x + 3)
