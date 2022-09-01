@@ -32,3 +32,9 @@ print(float_moma.isnull().sum())
 # By running we got that ExhibitionSortOrder has no missing values
 change_to_int(moma, 'ExhibitionSortOrder')
 print(moma['ExhibitionSortOrder'].dtype)
+
+float_cols = moma.select_dtypes(include=['float']).columns
+
+# Write you code below
+for col in float_cols:
+    moma[col] = pd.to_numeric(moma[col], downcast='float')
