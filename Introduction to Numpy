@@ -459,3 +459,6 @@ num_bits = 64 * num_values
 gb = num_bits / num_values
 
 import pandas as pd
+
+import pandas as pd
+cars = pd.read_csv('cars.csv')
