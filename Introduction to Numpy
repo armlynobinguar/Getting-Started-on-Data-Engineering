@@ -512,3 +512,6 @@ weight_ratio = max_weight / min_weight
 origin_counts = cars['Origin'].value_counts()
 origin_counts_dict = origin_counts.to_dict()
 print(origin_counts_dict)
+
+european_cars = cars[cars['Origin'] == 'Europe']
+print(european_cars.shape)
