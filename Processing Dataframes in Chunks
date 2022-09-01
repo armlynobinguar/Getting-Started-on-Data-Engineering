@@ -24,3 +24,11 @@ for chunk in chunk_iter:
 lifespans_dist = pd.concat(lifespans)
 print(lifespans_dist)
 
+
+chunk_iter = pd.read_csv("moma.csv", chunksize=250, usecols=['Gender'])
+overall_vc = list()
+for chunk in chunk_iter:
+    chunk_vc = chunk['Gender'].value_counts()
+    overall_vc.append(chunk_vc)
+combined_vc = pd.concat(overall_vc)
+print(combined_vc)
