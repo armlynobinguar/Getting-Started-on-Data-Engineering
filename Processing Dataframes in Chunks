@@ -32,3 +32,12 @@ for chunk in chunk_iter:
     overall_vc.append(chunk_vc)
 combined_vc = pd.concat(overall_vc)
 print(combined_vc)
+
+chunk_iter = pd.read_csv("moma.csv", chunksize=250, usecols=['Gender'])
+overall_vc = list()
+for chunk in chunk_iter:
+    chunk_vc = chunk['Gender'].value_counts()
+    overall_vc.append(chunk_vc)
+combined_vc = pd.concat(overall_vc)
+final_vc = combined_vc.groupby(combined_vc.index).sum()
+print(final_vc)
