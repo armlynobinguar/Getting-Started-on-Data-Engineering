@@ -529,3 +529,6 @@ name_and_origin = cars.loc[(cars['MPG'] > 0)  &
                            (cars['MPG'] < 12) & 
                            (cars['Horsepower'] >= 200), 
                            ['Name', 'Origin']]
+                           
+                           cars['PW_ratio'] = cars['Horsepower'] / cars['Weight']
+max_pw_ratio = cars['PW_ratio'].max()
