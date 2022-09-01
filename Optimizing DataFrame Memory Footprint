@@ -3,3 +3,9 @@ moma = pd.read_csv("moma.csv")
 print(moma.info())
 
 print(moma._data)
+
+num_entries = moma.size
+total_bytes = num_entries * 8
+total_megabytes = total_bytes / 1048576
+
+print(total_megabytes)
