@@ -462,3 +462,7 @@ import pandas as pd
 
 import pandas as pd
 cars = pd.read_csv('cars.csv')
+
+cars_shape = cars.shape
+first_six_rows = cars.head(6)
+last_four_rows = cars.tail(4)
