@@ -457,3 +457,5 @@ print(x + 3)
 num_values = 8 * (10 ** 9)
 num_bits = 64 * num_values
 gb = num_bits / num_values
+
+import pandas as pd
