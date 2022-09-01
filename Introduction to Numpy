@@ -471,3 +471,6 @@ cars_odd = cars.iloc[1::2, :3]
 fifth_odd_car_name = cars_odd.iat[4, 0]
 last_four = cars_odd.tail(4)
 print(last_four)
+
+cars.set_index('Name', inplace=True)
+weight_torino = cars.loc['Ford Torino', 'Weight']
