@@ -405,3 +405,7 @@ print(num_deaths)
 mask_zeros = sars == 0
 zeros = sars[mask_zeros]
 num_zeros = len(zeros)
+
+mask_zeros = sars == 0
+zeros = sars[mask_zeros]
+num_zeros = len(zeros)
