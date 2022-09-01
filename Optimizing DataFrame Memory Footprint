@@ -43,3 +43,11 @@ moma["ExhibitionBeginDate"] = pd.to_datetime(moma["ExhibitionBeginDate"])
 moma["ExhibitionEndDate"] = pd.to_datetime(moma["ExhibitionEndDate"])
 
 print(moma[["ExhibitionBeginDate", "ExhibitionEndDate"]].memory_usage(deep=True))
+
+for col in moma.select_dtypes(include=['object']):
+    num_unique_values = len(moma[col].unique())
+    num_total_values = len(moma[col])
+    if num_unique_values / num_total_values < 0.5:
+        moma[col] = moma[col].astype('category')
+        
+print(moma.info(memory_usage='deep'))
