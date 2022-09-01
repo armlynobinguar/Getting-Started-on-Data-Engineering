@@ -478,3 +478,6 @@ weight_torino = cars.loc['Ford Torino', 'Weight']
 honda_civic_hp = cars.loc['Honda Civic', 'Horsepower']
 print(honda_civic_hp)
 cars.reset_index(inplace=True)
+
+numeric_data = cars.loc[:, 'MPG':'Acceleration']
+print(numeric_data.head()) # By default DataFrame.head() returns 5 rows
