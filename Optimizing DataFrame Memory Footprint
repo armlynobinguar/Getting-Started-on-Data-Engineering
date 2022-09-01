@@ -9,3 +9,8 @@ total_bytes = num_entries * 8
 total_megabytes = total_bytes / 1048576
 
 print(total_megabytes)
+
+obj_cols = moma.select_dtypes(include=['object'])
+obj_cols_mem = obj_cols.memory_usage(deep=True)
+obj_cols_sum = obj_cols_mem.sum() / 1048576
+print(obj_cols_sum)
