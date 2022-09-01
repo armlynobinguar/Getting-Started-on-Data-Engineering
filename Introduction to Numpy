@@ -524,3 +524,8 @@ low_mpg_horsepower = cars[(cars['MPG'] > 0)  &
 
 light_or_fast = cars[(cars['Weight'] <= 2000) | 
                      (cars['Acceleration'] >= 30)]
+
+name_and_origin = cars.loc[(cars['MPG'] > 0)  & 
+                           (cars['MPG'] < 12) & 
+                           (cars['Horsepower'] >= 200), 
+                           ['Name', 'Origin']]
