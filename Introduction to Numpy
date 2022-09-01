@@ -466,3 +466,8 @@ cars = pd.read_csv('cars.csv')
 cars_shape = cars.shape
 first_six_rows = cars.head(6)
 last_four_rows = cars.tail(4)
+
+cars_odd = cars.iloc[1::2, :3]
+fifth_odd_car_name = cars_odd.iat[4, 0]
+last_four = cars_odd.tail(4)
+print(last_four)
