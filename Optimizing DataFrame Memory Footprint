@@ -51,3 +51,7 @@ for col in moma.select_dtypes(include=['object']):
         moma[col] = moma[col].astype('category')
         
 print(moma.info(memory_usage='deep'))
+
+keep_cols = ['ExhibitionID', 'ExhibitionNumber', 'ExhibitionBeginDate', 'ExhibitionEndDate', 'ExhibitionSortOrder', 'ExhibitionRole', 'ConstituentType', 'DisplayName', 'Institution', 'Nationality', 'Gender']
+moma = pd.read_csv("moma.csv", parse_dates=["ExhibitionBeginDate", "ExhibitionEndDate"], usecols=keep_cols)
+print(moma.memory_usage(deep=True).sum()/(1024*1024))
