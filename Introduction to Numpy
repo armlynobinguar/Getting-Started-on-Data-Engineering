@@ -487,3 +487,10 @@ name_origin_0_and_3 = cars.loc[[0, 3], ['Name', 'Origin']]
 
 car_100 = cars.loc[99]
 cars_2_to_10 = cars.loc[1:9]
+
+num_rows = cars.shape[0]
+one_index = pd.Index([i for i in range(1, num_rows + 1)])
+
+cars.set_index(one_index, inplace=True)
+car_100 = cars.loc[100]
+cars_2_to_10 = cars.loc[2:10]
