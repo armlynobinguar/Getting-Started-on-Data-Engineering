@@ -1,3 +1,5 @@
 import pandas as pd
 moma = pd.read_csv("moma.csv")
 print(moma.info())
+
+print(moma._data)
