@@ -412,3 +412,8 @@ num_zeros = len(zeros)
 
 non_zero_deaths = sars[:,3] > 0
 sars_subtable = sars[non_zero_deaths,2:]
+
+import numpy as np
+x = np.array([1, 2, 3, 4])
+x[0] = 5.5
+print(x)
