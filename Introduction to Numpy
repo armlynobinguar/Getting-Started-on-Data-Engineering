@@ -494,3 +494,8 @@ one_index = pd.Index([i for i in range(1, num_rows + 1)])
 cars.set_index(one_index, inplace=True)
 car_100 = cars.loc[100]
 cars_2_to_10 = cars.loc[2:10]
+
+import pandas as pd
+cars = pd.read_csv('cars.csv')
+index = pd.Index([i for i in range(1, cars.shape[0] + 1)])
+cars.set_index(index, inplace=True)
