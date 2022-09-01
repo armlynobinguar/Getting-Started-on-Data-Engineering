@@ -508,3 +508,7 @@ cars.set_index(index, inplace=True)
 max_weight = cars['Weight'].max()
 min_weight = cars['Weight'].min()
 weight_ratio = max_weight / min_weight
+
+origin_counts = cars['Origin'].value_counts()
+origin_counts_dict = origin_counts.to_dict()
+print(origin_counts_dict)
