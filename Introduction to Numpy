@@ -481,3 +481,6 @@ cars.reset_index(inplace=True)
 
 numeric_data = cars.loc[:, 'MPG':'Acceleration']
 print(numeric_data.head()) # By default DataFrame.head() returns 5 rows
+
+weights = cars['Weight']
+name_origin_0_and_3 = cars.loc[[0, 3], ['Name', 'Origin']]
