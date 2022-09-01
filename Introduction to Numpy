@@ -427,3 +427,17 @@ values = [1, 2, 3, 4]
 x = np.array(values, dtype=np.float64)
 x[0] = 5.5
 print(x)
+
+import numpy as np
+
+boolean_list = [True, False, True, False]
+integer_list = [6, -5, -9, 10]
+float_list   = [0.5, 10.74, 65.5, 0.2]
+boolean_array = np.array(boolean_list)
+print(boolean_array.dtype)
+
+integer_array = np.array(integer_list)
+print(integer_array.dtype)
+
+float_array = np.array(float_list)
+print(float_array.dtype)
