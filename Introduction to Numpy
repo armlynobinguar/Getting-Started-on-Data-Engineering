@@ -484,3 +484,6 @@ print(numeric_data.head()) # By default DataFrame.head() returns 5 rows
 
 weights = cars['Weight']
 name_origin_0_and_3 = cars.loc[[0, 3], ['Name', 'Origin']]
+
+car_100 = cars.loc[99]
+cars_2_to_10 = cars.loc[1:9]
