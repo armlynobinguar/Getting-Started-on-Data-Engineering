@@ -14,3 +14,21 @@ obj_cols = moma.select_dtypes(include=['object'])
 obj_cols_mem = obj_cols.memory_usage(deep=True)
 obj_cols_sum = obj_cols_mem.sum() / 1048576
 print(obj_cols_sum)
+
+def change_to_int(df, col_name):
+    # Get the minimum and maximum values
+    col_max = df[col_name].max()
+    col_min = df[col_name].min()
+    # Find the datatype
+    for dtype_name in ['int8', 'int16', 'int32', 'int64']:
+        # Check if this datatype can hold all values
+        if col_max <  np.iinfo(dtype_name).max and col_min > np.iinfo(dtype_name).min:
+            df[col_name] = df[col_name].astype(dtype_name)
+            break
+
+# Add you code below
+float_moma = moma.select_dtypes(include=['float64'])
+print(float_moma.isnull().sum())
+# By running we got that ExhibitionSortOrder has no missing values
+change_to_int(moma, 'ExhibitionSortOrder')
+print(moma['ExhibitionSortOrder'].dtype)
