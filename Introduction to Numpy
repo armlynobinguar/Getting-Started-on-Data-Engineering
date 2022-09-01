@@ -532,3 +532,8 @@ name_and_origin = cars.loc[(cars['MPG'] > 0)  &
                            
                            cars['PW_ratio'] = cars['Horsepower'] / cars['Weight']
 max_pw_ratio = cars['PW_ratio'].max()
+
+mpg_l100_constant = 235.214583
+mpg_non_zero = cars.loc[cars['MPG'] > 0, 'MPG']
+L100 = mpg_l100_constant / mpg_non_zero
+cars['L/100'] = L100
