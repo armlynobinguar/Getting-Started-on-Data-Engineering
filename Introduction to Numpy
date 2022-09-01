@@ -504,3 +504,7 @@ import pandas as pd
 cars = pd.read_csv('cars.csv')
 index = pd.Index([i for i in range(1, cars.shape[0] + 1)])
 cars.set_index(index, inplace=True)
+
+max_weight = cars['Weight'].max()
+min_weight = cars['Weight'].min()
+weight_ratio = max_weight / min_weight
