@@ -1,0 +1,10 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+memory_footprints = []
+chunk_iter = pd.read_csv("moma.csv", chunksize=250)
+for chunk in chunk_iter:
+    memory_footprints.append(chunk.memory_usage(deep=True).sum()/(1024*1024))
+
+plt.hist(memory_footprints)
+plt.show()
