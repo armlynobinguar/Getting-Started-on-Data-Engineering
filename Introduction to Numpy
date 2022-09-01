@@ -441,3 +441,8 @@ print(integer_array.dtype)
 
 float_array = np.array(float_list)
 print(float_array.dtype)
+
+import numpy as np
+values = [3.14, 6.42, 5.0, 0.5]
+x = np.array(values, dtype=np.int64)
+print(x)
