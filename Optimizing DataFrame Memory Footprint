@@ -38,3 +38,8 @@ float_cols = moma.select_dtypes(include=['float']).columns
 # Write you code below
 for col in float_cols:
     moma[col] = pd.to_numeric(moma[col], downcast='float')
+
+moma["ExhibitionBeginDate"] = pd.to_datetime(moma["ExhibitionBeginDate"])
+moma["ExhibitionEndDate"] = pd.to_datetime(moma["ExhibitionEndDate"])
+
+print(moma[["ExhibitionBeginDate", "ExhibitionEndDate"]].memory_usage(deep=True))
