@@ -8,3 +8,9 @@ for chunk in chunk_iter:
 
 plt.hist(memory_footprints)
 plt.show()
+
+num_rows = 0
+chunk_iter = pd.read_csv("moma.csv", chunksize=250)
+for chunk in chunk_iter:
+    num_rows += len(chunk)
+print(num_rows)
