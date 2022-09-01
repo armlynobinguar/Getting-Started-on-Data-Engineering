@@ -474,3 +474,7 @@ print(last_four)
 
 cars.set_index('Name', inplace=True)
 weight_torino = cars.loc['Ford Torino', 'Weight']
+
+honda_civic_hp = cars.loc['Honda Civic', 'Horsepower']
+print(honda_civic_hp)
+cars.reset_index(inplace=True)
