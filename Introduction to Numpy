@@ -499,3 +499,8 @@ import pandas as pd
 cars = pd.read_csv('cars.csv')
 index = pd.Index([i for i in range(1, cars.shape[0] + 1)])
 cars.set_index(index, inplace=True)
+
+import pandas as pd
+cars = pd.read_csv('cars.csv')
+index = pd.Index([i for i in range(1, cars.shape[0] + 1)])
+cars.set_index(index, inplace=True)
