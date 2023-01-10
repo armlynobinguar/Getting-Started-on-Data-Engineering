@@ -13,3 +13,13 @@ WHERE table_name = 'university_professors' AND table_schema = 'public';
 SELECT * 
 FROM university_professors 
 LIMIT 5;
+
+-- Create a table for the professors entity type
+CREATE TABLE professors (
+ firstname text,
+ lastname text
+);
+
+-- Print the contents of this table
+SELECT * 
+FROM professors
