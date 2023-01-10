@@ -42,3 +42,7 @@ ADD COLUMN university_shortname text;
 -- Print the contents of this table
 SELECT * 
 FROM professors
+
+-- Rename the organisation column
+ALTER TABLE affiliations
+RENAME COLUMN organisation TO organization;
