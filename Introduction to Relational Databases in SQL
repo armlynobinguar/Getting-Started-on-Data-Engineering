@@ -81,3 +81,7 @@ FROM university_professors;
 -- Doublecheck the contents of affiliations
 SELECT * 
 FROM affiliations;
+
+
+-- Delete the university_professors table
+DROP TABLE university_professors;
