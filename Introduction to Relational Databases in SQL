@@ -238,3 +238,7 @@ CREATE TABLE students (
   ssn integer PRIMARY KEY,
   phone_no char(12)
 );
+
+-- Rename the university_shortname column
+ALTER TABLE professors
+RENAME COLUMN university_shortname TO university_id;
