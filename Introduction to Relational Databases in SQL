@@ -367,3 +367,12 @@ WHERE id = 'CUREM';
 -- Check that no more affiliations with this organization exist
 SELECT * FROM affiliations
 WHERE organization_id = 'CUREM';
+
+-- Count the total number of affiliations per university
+SELECT COUNT(*), professors.university_id 
+FROM affiliations
+JOIN professors
+ON affiliations.professor_id = professors.id
+-- Group by the university ids of professors
+GROUP BY professors.university_id 
+ORDER BY count DESC;
