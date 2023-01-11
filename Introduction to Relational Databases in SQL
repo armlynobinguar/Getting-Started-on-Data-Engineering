@@ -420,3 +420,8 @@ SELECT table_name
 FROM information_schema.tables
 -- Specify the correct table_schema value
 WHERE table_schema = 'public';
+
+-- Query the first five rows of our table
+SELECT * 
+FROM university_professors 
+LIMIT 5;
