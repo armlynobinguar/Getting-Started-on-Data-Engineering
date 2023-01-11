@@ -289,3 +289,8 @@ RENAME organization TO organization_id;
 -- Add a foreign key on organization_id
 ALTER TABLE affiliations
 ADD CONSTRAINT affiliations_organization_fkey FOREIGN KEY (organization_id) REFERENCES organizations (id);
+
+-- Have a look at the 10 first rows of affiliations
+SELECT * 
+FROM affiliations 
+LIMIT 10;
