@@ -265,3 +265,7 @@ FROM professors
 JOIN universities
 ON professors.university_id = universities.id
 WHERE universities.university_city = 'Zurich';
+
+-- Add a professor_id column
+ALTER TABLE affiliations
+ADD COLUMN professor_id integer REFERENCES professors (id);
