@@ -376,3 +376,13 @@ ON affiliations.professor_id = professors.id
 -- Group by the university ids of professors
 GROUP BY professors.university_id 
 ORDER BY count DESC;
+
+-- Join all tables
+SELECT *
+FROM affiliations
+JOIN professors
+ON affiliations.professor_id = professors.id
+JOIN organizations
+ON affiliations.organization_id = organizations.id
+JOIN universities
+ON professors.university_id = universities.id;
