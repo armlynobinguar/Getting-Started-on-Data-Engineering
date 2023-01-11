@@ -231,3 +231,10 @@ ADD CONSTRAINT id_pk PRIMARY KEY(id);
 
 -- Have a look at the table
 SELECT * FROM cars;
+
+-- Create the table
+CREATE TABLE students (
+  last_name varchar(128) NOT NULL,
+  ssn integer PRIMARY KEY,
+  phone_no char(12)
+);
