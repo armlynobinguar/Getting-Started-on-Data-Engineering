@@ -489,3 +489,7 @@ ADD CONSTRAINT university_shortname_unq UNIQUE(university_shortname);
 -- Count the number of rows in universities
 SELECT COUNT(*) 
 FROM universities;
+
+-- Try out different combinations
+SELECT COUNT(DISTINCT(firstname, lastname)) 
+FROM professors;
